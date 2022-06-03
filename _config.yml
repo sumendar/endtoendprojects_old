@@ -14,7 +14,7 @@ github_repo: "endtoendprojects"
 
 # OPTIONAL: override baseurl and url if using a custom domain
 # Note: leave out the trailing / from this value. 
-url: "http://www.endtoendprojects.com/endtoendprojects" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://sumendar.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 ###########################################################
 #########  Special Instructions for baseurl ###############
