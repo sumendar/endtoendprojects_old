@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://sumendar.github.io/markdown/2020/01/14/test-markdown-post.html</loc>
+<loc>http://www.endtoendprojects.com/markdown/2020/01/14/test-markdown-post.html</loc>
 <lastmod>2020-01-14T00:00:00-06:00</lastmod>
 </url>
 <url>
-<loc>https://sumendar.github.io/jupyter/2020/02/20/test.html</loc>
+<loc>http://www.endtoendprojects.com/jupyter/2020/02/20/test.html</loc>
 <lastmod>2020-02-20T00:00:00-06:00</lastmod>
 </url>
 <url>
-<loc>https://sumendar.github.io/about/</loc>
+<loc>http://www.endtoendprojects.com/about/</loc>
 </url>
 <url>
-<loc>https://sumendar.github.io/</loc>
+<loc>http://www.endtoendprojects.com/</loc>
 </url>
 <url>
-<loc>https://sumendar.github.io/search/</loc>
+<loc>http://www.endtoendprojects.com/search/</loc>
 </url>
 <url>
-<loc>https://sumendar.github.io/categories/</loc>
+<loc>http://www.endtoendprojects.com/categories/</loc>
 </url>
 </urlset>
