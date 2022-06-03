@@ -1,1 +1,1 @@
-Sitemap: https://sumendar.github.io/endtoendprojects/sitemap.xml
+Sitemap: https://sumendar.github.io/sitemap.xml
