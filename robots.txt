@@ -1,1 +1,1 @@
-Sitemap: http://endtoendprojects.com/endtoendprojects/sitemap.xml
+Sitemap: http://www.endtoendprojects.com/endtoendprojects/sitemap.xml
