@@ -19,7 +19,7 @@ The first line of the file should start with a single hash character, then a spa
 
 ## Basic formatting
 
-You can use *italics*, **bold**, `code font text`, and create [links](https://www.markdownguide.org/cheat-sheet/) [links](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) [links](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting) [links](https://github.github.com/gfm/). Here's a footnote [^1]. Here's a horizontal rule:
+You can use *italics*, **bold**, `code font text`, and create [link1](https://www.markdownguide.org/cheat-sheet/) [link2](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) [link3](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting) [link4](https://github.github.com/gfm/). Here's a footnote [^1]. Here's a horizontal rule:
 
 ---
 
