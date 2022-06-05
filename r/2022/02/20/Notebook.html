@@ -10,15 +10,17 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="The blog was created for future end-to-end data science and machine learning projects." />
 <meta property="og:description" content="The blog was created for future end-to-end data science and machine learning projects." />
-<link rel="canonical" href="http://www.endtoendprojects.com/2022/02/20/Notebook.html" />
-<meta property="og:url" content="http://www.endtoendprojects.com/2022/02/20/Notebook.html" />
+<link rel="canonical" href="http://www.endtoendprojects.com/r/2022/02/20/Notebook.html" />
+<meta property="og:url" content="http://www.endtoendprojects.com/r/2022/02/20/Notebook.html" />
 <meta property="og:site_name" content="End to End Projects" />
+<meta property="og:image" content="http://www.endtoendprojects.com/imgs/YQfqXlY.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-02-20T00:00:00-06:00" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://www.endtoendprojects.com/imgs/YQfqXlY.png" />
 <meta property="twitter:title" content="Foundational Principles of R Programming" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-20T00:00:00-06:00","datePublished":"2022-02-20T00:00:00-06:00","description":"The blog was created for future end-to-end data science and machine learning projects.","headline":"Foundational Principles of R Programming","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.endtoendprojects.com/2022/02/20/Notebook.html"},"url":"http://www.endtoendprojects.com/2022/02/20/Notebook.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-20T00:00:00-06:00","datePublished":"2022-02-20T00:00:00-06:00","description":"The blog was created for future end-to-end data science and machine learning projects.","headline":"Foundational Principles of R Programming","image":"http://www.endtoendprojects.com/imgs/YQfqXlY.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.endtoendprojects.com/r/2022/02/20/Notebook.html"},"url":"http://www.endtoendprojects.com/r/2022/02/20/Notebook.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://www.endtoendprojects.com/feed.xml" title="End to End Projects" /><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -84,6 +86,13 @@ window.onload = wrap_img;
 </span></p>
 
     
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/categories/#R">R</a>
+        
+      
+      </p>
+    
 
     
       
@@ -116,7 +125,65 @@ window.onload = wrap_img;
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <!--
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Data-Types">Data Types </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Numeric-(integer-and-double)">Numeric (integer and double) </a></li>
+<li class="toc-entry toc-h3"><a href="#complex">complex </a></li>
+<li class="toc-entry toc-h3"><a href="#character-and-factor">character and factor </a></li>
+<li class="toc-entry toc-h3"><a href="#logical">logical </a></li>
+<li class="toc-entry toc-h3"><a href="#date-and-time">date and time </a></li>
+<li class="toc-entry toc-h3"><a href="#Raw">Raw </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Data-Structures">Data Structures </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#vectors">vectors </a></li>
+<li class="toc-entry toc-h3"><a href="#matrices">matrices </a></li>
+<li class="toc-entry toc-h3"><a href="#arrays">arrays </a></li>
+<li class="toc-entry toc-h3"><a href="#data-frames">data frames </a></li>
+<li class="toc-entry toc-h3"><a href="#lists">lists </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Operators">Operators </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Assignment-operators:">Assignment operators: </a></li>
+<li class="toc-entry toc-h3"><a href="#Arithmetic-operators:">Arithmetic operators: </a></li>
+<li class="toc-entry toc-h3"><a href="#Relational-operators:">Relational operators: </a></li>
+<li class="toc-entry toc-h3"><a href="#Logical-operators:">Logical operators: </a></li>
+<li class="toc-entry toc-h3"><a href="#Miscellaneous-operators:">Miscellaneous operators: </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Control-Structures-&-Loops">Control Structures &amp; Loops </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#if">if </a></li>
+<li class="toc-entry toc-h3"><a href="#if-else">if else </a></li>
+<li class="toc-entry toc-h3"><a href="#If-else-if">If else if </a></li>
+<li class="toc-entry toc-h3"><a href="#for">for </a></li>
+<li class="toc-entry toc-h3"><a href="#while">while </a></li>
+<li class="toc-entry toc-h3"><a href="#break">break </a></li>
+<li class="toc-entry toc-h3"><a href="#repeat">repeat </a></li>
+<li class="toc-entry toc-h3"><a href="#next">next </a></li>
+<li class="toc-entry toc-h3"><a href="#switch">switch </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Functions">Functions </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Built-in-functions">Built-in functions </a></li>
+<li class="toc-entry toc-h3"><a href="#User-defined-functions">User defined functions </a></li>
+<li class="toc-entry toc-h3"><a href="#Apply-family-functions">Apply family functions </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#apply">apply </a></li>
+<li class="toc-entry toc-h4"><a href="#lapply">lapply </a></li>
+<li class="toc-entry toc-h4"><a href="#sapply">sapply </a></li>
+<li class="toc-entry toc-h4"><a href="#tapply">tapply </a></li>
+<li class="toc-entry toc-h4"><a href="#mapply">mapply </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Packages/Modules/Libraries">Packages/Modules/Libraries </a></li>
+</ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -125,36 +192,29 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>A tutorial of Basic R programming.</p>
-</blockquote>
-<ul>
-<li>toc:true - badges: true</li>
-<li>comments: true</li>
-<li>categories: [R]</li>
-<li>image: imgs/YQfqXlY.png</li>
-</ul>
+<p><strong>Default Notebook Extensions For Better Presentation:</strong>   <img src="https://i.imgur.com/qJ0xmMJ.jpg" alt="Imgur"></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Default Notebook Extensions For Better Presentation:</strong>   <img src="https://i.imgur.com/qJ0xmMJ.jpg" alt="Imgur" /></p>
-
+<h2 id="Data-Types">
+<a class="anchor" href="#Data-Types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Types<a class="anchor-link" href="#Data-Types"> </a>
+</h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-Types">Data Types<a class="anchor-link" href="#Data-Types"> </a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Numeric-(integer-and-double)">Numeric (integer and double)<a class="anchor-link" href="#Numeric-(integer-and-double)"> </a></h3>
+<h3 id="Numeric-(integer-and-double)">
+<a class="anchor" href="#Numeric-(integer-and-double)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Numeric (integer and double)<a class="anchor-link" href="#Numeric-(integer-and-double)"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -188,11 +248,11 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;numeric&#34;
-[1] &#34;numeric&#34;
-[1] &#34;numeric&#34;
-[1] &#34;numeric&#34;
-[1] &#34;integer&#34;
+<pre>[1] "numeric"
+[1] "numeric"
+[1] "numeric"
+[1] "numeric"
+[1] "integer"
 </pre>
 </div>
 </div>
@@ -227,11 +287,11 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;double&#34;
-[1] &#34;double&#34;
-[1] &#34;double&#34;
-[1] &#34;double&#34;
-[1] &#34;integer&#34;
+<pre>[1] "double"
+[1] "double"
+[1] "double"
+[1] "double"
+[1] "integer"
 </pre>
 </div>
 </div>
@@ -242,9 +302,12 @@ window.onload = wrap_img;
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="complex">complex<a class="anchor-link" href="#complex"> </a></h3>
+<h3 id="complex">
+<a class="anchor" href="#complex" aria-hidden="true"><span class="octicon octicon-link"></span></a>complex<a class="anchor-link" href="#complex"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -269,7 +332,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;complex&#34;
+<pre>[1] "complex"
 </pre>
 </div>
 </div>
@@ -280,9 +343,12 @@ window.onload = wrap_img;
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="character-and-factor">character and factor<a class="anchor-link" href="#character-and-factor"> </a></h3>
+<h3 id="character-and-factor">
+<a class="anchor" href="#character-and-factor" aria-hidden="true"><span class="octicon octicon-link"></span></a>character and factor<a class="anchor-link" href="#character-and-factor"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -293,13 +359,13 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="s">&quot;c&quot;</span>
-<span class="n">c2</span> <span class="o">=</span> <span class="s">&quot;data&quot;</span>
-<span class="n">c3</span> <span class="o">=</span> <span class="s">&#39;R-Programming&#39;</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="s">"c"</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="s">"data"</span>
+<span class="n">c3</span> <span class="o">=</span> <span class="s">'R-Programming'</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">c1</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">c2</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">c3</span><span class="p">))</span>
-<span class="n">v1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">,</span><span class="s">&quot;science&quot;</span><span class="p">,</span><span class="s">&quot;R-Programming&quot;</span><span class="p">)</span>
+<span class="n">v1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">"data"</span><span class="p">,</span><span class="s">"science"</span><span class="p">,</span><span class="s">"R-Programming"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">v1</span><span class="p">))</span>
 </pre></div>
 
@@ -313,10 +379,10 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;character&#34;
-[1] &#34;character&#34;
-[1] &#34;character&#34;
-[1] &#34;character&#34;
+<pre>[1] "character"
+[1] "character"
+[1] "character"
+[1] "character"
 </pre>
 </div>
 </div>
@@ -327,7 +393,8 @@ window.onload = wrap_img;
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Factors
 Factor object encodes a vector of unique elements (levels) from the given data vector.</p>
@@ -342,19 +409,19 @@ Factor object encodes a vector of unique elements (levels) from the given data v
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">v1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">,</span><span class="s">&quot;science&quot;</span><span class="p">,</span><span class="s">&quot;R-Programming&quot;</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">v1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">"data"</span><span class="p">,</span><span class="s">"science"</span><span class="p">,</span><span class="s">"R-Programming"</span><span class="p">)</span>
 <span class="n">f1</span> <span class="o">=</span><span class="nf">factor</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">v1</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
-<span class="n">v2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;medium&quot;</span><span class="p">,</span><span class="s">&quot;High&quot;</span><span class="p">,</span><span class="s">&quot;low&quot;</span><span class="p">)</span>
+<span class="n">v2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">"medium"</span><span class="p">,</span><span class="s">"High"</span><span class="p">,</span><span class="s">"low"</span><span class="p">)</span>
 <span class="n">f2</span> <span class="o">=</span><span class="nf">factor</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
-<span class="n">v3</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;medium&quot;</span><span class="p">,</span><span class="s">&quot;high&quot;</span><span class="p">,</span><span class="s">&quot;low&quot;</span><span class="p">)</span>
+<span class="n">v3</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">"medium"</span><span class="p">,</span><span class="s">"high"</span><span class="p">,</span><span class="s">"low"</span><span class="p">)</span>
 <span class="n">f3</span> <span class="o">=</span><span class="nf">factor</span><span class="p">(</span><span class="n">v3</span><span class="p">,</span> <span class="n">ordered</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span>
-<span class="n">v4</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;medium&quot;</span><span class="p">,</span><span class="s">&quot;high&quot;</span><span class="p">,</span><span class="s">&quot;low&quot;</span><span class="p">)</span>
-<span class="n">f4</span> <span class="o">=</span><span class="nf">factor</span><span class="p">(</span><span class="n">v4</span><span class="p">,</span> <span class="n">ordered</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;low&quot;</span><span class="p">,</span> <span class="s">&quot;medium&quot;</span><span class="p">,</span> <span class="s">&quot;high&quot;</span><span class="p">))</span>
+<span class="n">v4</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">"medium"</span><span class="p">,</span><span class="s">"high"</span><span class="p">,</span><span class="s">"low"</span><span class="p">)</span>
+<span class="n">f4</span> <span class="o">=</span><span class="nf">factor</span><span class="p">(</span><span class="n">v4</span><span class="p">,</span> <span class="n">ordered</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">"low"</span><span class="p">,</span> <span class="s">"medium"</span><span class="p">,</span> <span class="s">"high"</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">f4</span><span class="p">)</span>
 </pre></div>
 
@@ -368,8 +435,8 @@ Factor object encodes a vector of unique elements (levels) from the given data v
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;character&#34;
-[1] &#34;data&#34;          &#34;science&#34;       &#34;R-Programming&#34;
+<pre>[1] "character"
+[1] "data"          "science"       "R-Programming"
 [1] data          science       R-Programming
 Levels: data R-Programming science
 [1] medium High   low   
@@ -388,9 +455,12 @@ Levels: low &lt; medium &lt; high
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="logical">logical<a class="anchor-link" href="#logical"> </a></h3>
+<h3 id="logical">
+<a class="anchor" href="#logical" aria-hidden="true"><span class="octicon octicon-link"></span></a>logical<a class="anchor-link" href="#logical"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -417,8 +487,8 @@ Levels: low &lt; medium &lt; high
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;logical&#34;
-[1] &#34;logical&#34;
+<pre>[1] "logical"
+[1] "logical"
 </pre>
 </div>
 </div>
@@ -429,9 +499,12 @@ Levels: low &lt; medium &lt; high
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="date-and-time">date and time<a class="anchor-link" href="#date-and-time"> </a></h3>
+<h3 id="date-and-time">
+<a class="anchor" href="#date-and-time" aria-hidden="true"><span class="octicon octicon-link"></span></a>date and time<a class="anchor-link" href="#date-and-time"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -442,8 +515,8 @@ Levels: low &lt; medium &lt; high
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">c1</span> <span class="o">&lt;-</span> <span class="s">&#39;2021-6-16&#39;</span>
-<span class="n">d1</span> <span class="o">&lt;-</span> <span class="nf">as.Date</span><span class="p">(</span><span class="s">&#39;2021-6-16&#39;</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">c1</span> <span class="o">&lt;-</span> <span class="s">'2021-6-16'</span>
+<span class="n">d1</span> <span class="o">&lt;-</span> <span class="nf">as.Date</span><span class="p">(</span><span class="s">'2021-6-16'</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">c1</span><span class="p">))</span>
@@ -460,10 +533,10 @@ Levels: low &lt; medium &lt; high
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;2021-6-16&#34;
-[1] &#34;2021-06-16&#34;
-[1] &#34;character&#34;
-[1] &#34;Date&#34;
+<pre>[1] "2021-6-16"
+[1] "2021-06-16"
+[1] "character"
+[1] "Date"
 </pre>
 </div>
 </div>
@@ -474,9 +547,10 @@ Levels: low &lt; medium &lt; high
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="/images/copied_from_nb/imgs/screenshot_20211119_194218.jpg" alt="" /></p>
+<p><img src="/images/copied_from_nb/imgs/screenshot_20211119_194218.jpg" alt=""></p>
 
 </div>
 </div>
@@ -488,12 +562,12 @@ Levels: low &lt; medium &lt; high
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">as.Date</span><span class="p">(</span><span class="s">&#39;1/15/2001&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;%m/%d/%Y&#39;</span><span class="p">)</span>
-<span class="c1"># &quot;2001-01-15&quot;</span>
-<span class="nf">as.Date</span><span class="p">(</span><span class="s">&#39;April 26, 2001&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;%B %d, %Y&#39;</span><span class="p">)</span>
-<span class="c1"># &quot;2001-04-26&quot;</span>
-<span class="nf">as.Date</span><span class="p">(</span><span class="s">&#39;22JUN01&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">&#39;%d%b%y&#39;</span><span class="p">)</span>   <span class="c1"># %y is system-specific; use with caution</span>
-<span class="c1"># &quot;2001-06-22&quot;</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">as.Date</span><span class="p">(</span><span class="s">'1/15/2001'</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">'%m/%d/%Y'</span><span class="p">)</span>
+<span class="c1"># "2001-01-15"</span>
+<span class="nf">as.Date</span><span class="p">(</span><span class="s">'April 26, 2001'</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">'%B %d, %Y'</span><span class="p">)</span>
+<span class="c1"># "2001-04-26"</span>
+<span class="nf">as.Date</span><span class="p">(</span><span class="s">'22JUN01'</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s">'%d%b%y'</span><span class="p">)</span>   <span class="c1"># %y is system-specific; use with caution</span>
+<span class="c1"># "2001-06-22"</span>
 </pre></div>
 
     </div>
@@ -536,7 +610,8 @@ Levels: low &lt; medium &lt; high
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>as.POSIXct: Date-time Conversion-</code></p>
 
@@ -597,7 +672,7 @@ Levels: low &lt; medium &lt; high
 
 
 <div class="output_text output_subarea ">
-<pre>[1] &#34;2021-12-05 09:09:58 IST&#34;</pre>
+<pre>[1] "2021-12-05 09:09:58 IST"</pre>
 </div>
 
 </div>
@@ -608,9 +683,12 @@ Levels: low &lt; medium &lt; high
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Raw">Raw<a class="anchor-link" href="#Raw"> </a></h3>
+<h3 id="Raw">
+<a class="anchor" href="#Raw" aria-hidden="true"><span class="octicon octicon-link"></span></a>Raw<a class="anchor-link" href="#Raw"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -621,7 +699,7 @@ Levels: low &lt; medium &lt; high
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">raw</span><span class="o">&lt;-</span> <span class="nf">charToRaw</span><span class="p">(</span><span class="s">&quot;R programming&quot;</span><span class="p">)</span>  
+<div class=" highlight hl-r"><pre><span></span><span class="n">raw</span><span class="o">&lt;-</span> <span class="nf">charToRaw</span><span class="p">(</span><span class="s">"R programming"</span><span class="p">)</span>  
 <span class="nf">print</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
 </pre></div>
 
@@ -646,7 +724,8 @@ Levels: low &lt; medium &lt; high
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Raw is a very unusual data type. For instance, you could transform a character object or a integer numeric value to a raw object with the <code>charToRaw</code> and <code>intToBits</code> functions, respectively.</p>
 
@@ -660,13 +739,13 @@ Levels: low &lt; medium &lt; high
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">charToRaw</span><span class="p">(</span><span class="s">&quot;data science&quot;</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">charToRaw</span><span class="p">(</span><span class="s">"data science"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># [1] 64 61 74 61 20 73 63 69 65 6e 63 65</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># &quot;raw&quot;</span>
+<span class="nf">class</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># "raw"</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">is.vector</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
 <span class="n">b</span> <span class="o">&lt;-</span> <span class="nf">intToBits</span><span class="p">(</span><span class="m">6</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1"># &quot;raw&quot;</span>
+<span class="nf">class</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1"># "raw"</span>
 </pre></div>
 
     </div>
@@ -764,21 +843,24 @@ Levels: low &lt; medium &lt; high
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Objects:</strong><br />
+<p><strong>Objects:</strong><br>
 In every computer language variables provide a means of accessing the data stored in memory. R does not provide direct access to the computer’s memory but rather provides a number of specialized data structures we will refer to as objects. These objects are referred to through symbols or variables</p>
-<blockquote><p>Everything in R language is an Object, Objects are further categorized into above mentioned list</p>
+<blockquote>
+<p>Everything in R language is an Object, Objects are further categorized into above mentioned list</p>
 </blockquote>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><figure>
   
-    <img class="docimage" src="/images/copied_from_nb/imgs/VXYtqs9A1.jpg" alt="drawing" style="max-width: 550px" />
+    <img class="docimage" src="/images/copied_from_nb/imgs/VXYtqs9A1.jpg" alt="drawing" style="max-width: 550px">
     
     
 </figure>
@@ -787,33 +869,43 @@ In every computer language variables provide a means of accessing the data store
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this chapter we provide preliminary descriptions extraction and operations of the various data structures provided in R</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-Structures">Data Structures<a class="anchor-link" href="#Data-Structures"> </a></h2>
+<h2 id="Data-Structures">
+<a class="anchor" href="#Data-Structures" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Structures<a class="anchor-link" href="#Data-Structures"> </a>
+</h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="vectors">vectors<a class="anchor-link" href="#vectors"> </a></h3>
+<h3 id="vectors">
+<a class="anchor" href="#vectors" aria-hidden="true"><span class="octicon octicon-link"></span></a>vectors<a class="anchor-link" href="#vectors"> </a>
+</h3>
 </div>
 </div>
 </div>Atomic vectors are one of the basic types of objects in R programming. Atomic vectors can store homogeneous data types such as character, doubles, integers, raw, logical, and complex. A single element variable is also said to be vector.
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To create a vector we use <code>c()</code> function each value/element seperated with comma<br />
+<p>To create a vector we use <code>c()</code> function each value/element seperated with comma<br>
 Eg:</p>
 <ol>
 <li><code>x &lt;- c(2,7,1,7,1,6,80,0,1)</code></li>
-<li><code>z &lt;- c("Alec", "Dan", "Rob", "Rich")</code>  </li>
-<li><code>y &lt;- c(TRUE, TRUE, FALSE, FALSE)</code>  </li>
+<li>
+<code>z &lt;- c("Alec", "Dan", "Rob", "Rich")</code>  </li>
+<li>
+<code>y &lt;- c(TRUE, TRUE, FALSE, FALSE)</code>  </li>
 </ol>
 
 </div>
@@ -828,7 +920,7 @@ Eg:</p>
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">80</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">)</span>
-<span class="n">z</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Alec&quot;</span><span class="p">,</span> <span class="s">&quot;Dan&quot;</span><span class="p">,</span> <span class="s">&quot;Rob&quot;</span><span class="p">,</span> <span class="s">&quot;Rich&quot;</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">"Alec"</span><span class="p">,</span> <span class="s">"Dan"</span><span class="p">,</span> <span class="s">"Rob"</span><span class="p">,</span> <span class="s">"Rich"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -860,9 +952,9 @@ Eg:</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;numeric&#34;
-[1] &#34;logical&#34;
-[1] &#34;character&#34;
+<pre>[1] "numeric"
+[1] "logical"
+[1] "character"
 </pre>
 </div>
 </div>
@@ -873,7 +965,8 @@ Eg:</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Indexing</strong></p>
 
@@ -957,19 +1050,24 @@ Negative
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="matrices">matrices<a class="anchor-link" href="#matrices"> </a></h3>
+<h3 id="matrices">
+<a class="anchor" href="#matrices" aria-hidden="true"><span class="octicon octicon-link"></span></a>matrices<a class="anchor-link" href="#matrices"> </a>
+</h3>
 </div>
 </div>
 </div>Matrices
 To store values as 2-Dimensional array, matrices are used in R. Data, number of rows and columns are defined in the matrix() function.
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To create a matrix we use <code>matrix()</code> function with nrow and ncol arguements<br />
+<p>To create a matrix we use <code>matrix()</code> function with nrow and ncol arguements<br>
 Eg:</p>
 <ol>
-<li><code>m1 &lt;- matrix(c(2,7,1,7,1,6,80,0,1),nrow=2,ncol=4)</code>  </li>
+<li>
+<code>m1 &lt;- matrix(c(2,7,1,7,1,6,80,0,1),nrow=2,ncol=4)</code>  </li>
 </ol>
 
 </div>
@@ -1010,7 +1108,8 @@ Eg:</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Indexing</strong></p>
 
@@ -1068,7 +1167,7 @@ Eg:</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">thismatrix</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;banana&quot;</span><span class="p">,</span> <span class="s">&quot;cherry&quot;</span><span class="p">,</span> <span class="s">&quot;orange&quot;</span><span class="p">,</span> <span class="s">&quot;mango&quot;</span><span class="p">,</span> <span class="s">&quot;pineapple&quot;</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">thismatrix</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">"apple"</span><span class="p">,</span> <span class="s">"banana"</span><span class="p">,</span> <span class="s">"cherry"</span><span class="p">,</span> <span class="s">"orange"</span><span class="p">,</span> <span class="s">"mango"</span><span class="p">,</span> <span class="s">"pineapple"</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span><span class="m">2</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">thismatrix</span><span class="p">)</span>
 <span class="c1">#Remove the first row and the first column</span>
 </pre></div>
@@ -1084,9 +1183,9 @@ Eg:</p>
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>     [,1]     [,2]       
-[1,] &#34;apple&#34;  &#34;orange&#34;   
-[2,] &#34;banana&#34; &#34;mango&#34;    
-[3,] &#34;cherry&#34; &#34;pineapple&#34;
+[1,] "apple"  "orange"   
+[2,] "banana" "mango"    
+[3,] "cherry" "pineapple"
 </pre>
 </div>
 </div>
@@ -1119,7 +1218,7 @@ Eg:</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;mango&#34;     &#34;pineapple&#34;
+<pre>[1] "mango"     "pineapple"
 </pre>
 </div>
 </div>
@@ -1130,7 +1229,8 @@ Eg:</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>create a matrix using <code>cbind</code> and <code>rbind</code></strong></p>
 
@@ -1182,9 +1282,12 @@ Eg:</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="arrays">arrays<a class="anchor-link" href="#arrays"> </a></h3>
+<h3 id="arrays">
+<a class="anchor" href="#arrays" aria-hidden="true"><span class="octicon octicon-link"></span></a>arrays<a class="anchor-link" href="#arrays"> </a>
+</h3>
 </div>
 </div>
 </div>Arrays
@@ -1211,7 +1314,7 @@ array() function is used to create n-dimensional array. This function takes dim 
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;array&#34;
+<pre>[1] "array"
 , , 1
 
      [,1] [,2] [,3]
@@ -1243,7 +1346,8 @@ array() function is used to create n-dimensional array. This function takes dim 
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Indexing</strong></p>
 
@@ -1383,9 +1487,12 @@ array() function is used to create n-dimensional array. This function takes dim 
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="data-frames">data frames<a class="anchor-link" href="#data-frames"> </a></h3>
+<h3 id="data-frames">
+<a class="anchor" href="#data-frames" aria-hidden="true"><span class="octicon octicon-link"></span></a>data frames<a class="anchor-link" href="#data-frames"> </a>
+</h3>
 </div>
 </div>
 </div>Data Frames
@@ -1397,7 +1504,7 @@ Data frames are 2-dimensional tabular data object in R programming. Data frames 
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">Name</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Ramesh&quot;</span><span class="p">,</span> <span class="s">&quot;Tarun&quot;</span><span class="p">,</span> <span class="s">&quot;Shekar&quot;</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">Name</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">"Ramesh"</span><span class="p">,</span> <span class="s">"Tarun"</span><span class="p">,</span> <span class="s">"Shekar"</span><span class="p">)</span>
 <span class="n">age</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">23</span><span class="p">,</span> <span class="m">54</span><span class="p">,</span> <span class="m">32</span><span class="p">)</span>
 <span class="n">height</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">4.6</span><span class="p">,</span><span class="m">5.4</span><span class="p">,</span><span class="m">6.2</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">Name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
@@ -1416,11 +1523,27 @@ Data frames are 2-dimensional tabular data object in R programming. Data frames 
 
 <div class="output_html rendered_html output_subarea ">
 <table>
-<thead><tr><th scope="col">Name</th><th scope="col">age</th><th scope="col">height</th></tr></thead>
+<thead><tr>
+<th scope="col">Name</th>
+<th scope="col">age</th>
+<th scope="col">height</th>
+</tr></thead>
 <tbody>
-	<tr><td>Ramesh</td><td>23    </td><td>4.6   </td></tr>
-	<tr><td>Tarun </td><td>54    </td><td>5.4   </td></tr>
-	<tr><td>Shekar</td><td>32    </td><td>6.2   </td></tr>
+	<tr>
+<td>Ramesh</td>
+<td>23    </td>
+<td>4.6   </td>
+</tr>
+	<tr>
+<td>Tarun </td>
+<td>54    </td>
+<td>5.4   </td>
+</tr>
+	<tr>
+<td>Shekar</td>
+<td>32    </td>
+<td>6.2   </td>
+</tr>
 </tbody>
 </table>
 
@@ -1441,7 +1564,7 @@ Data frames are 2-dimensional tabular data object in R programming. Data frames 
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">))</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">"a"</span><span class="p">,</span> <span class="s">"b"</span><span class="p">,</span> <span class="s">"c"</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
@@ -1469,7 +1592,8 @@ Data frames are 2-dimensional tabular data object in R programming. Data frames 
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Create dataframe using <code>cbind</code> and <code>rbind</code> methods</strong></p>
 
@@ -1503,7 +1627,7 @@ Data frames are 2-dimensional tabular data object in R programming. Data frames 
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;data.frame&#34;
+<pre>[1] "data.frame"
   1 a  b
 1 1 1  1
 2 1 2  4
@@ -1519,13 +1643,31 @@ Data frames are 2-dimensional tabular data object in R programming. Data frames 
 
 <div class="output_html rendered_html output_subarea ">
 <table>
-<thead><tr><th scope="col">a</th><th scope="col">b</th></tr></thead>
+<thead><tr>
+<th scope="col">a</th>
+<th scope="col">b</th>
+</tr></thead>
 <tbody>
-	<tr><td>1 </td><td> 1</td></tr>
-	<tr><td>2 </td><td> 4</td></tr>
-	<tr><td>3 </td><td> 9</td></tr>
-	<tr><td>4 </td><td>16</td></tr>
-	<tr><td>5 </td><td>25</td></tr>
+	<tr>
+<td>1 </td>
+<td> 1</td>
+</tr>
+	<tr>
+<td>2 </td>
+<td> 4</td>
+</tr>
+	<tr>
+<td>3 </td>
+<td> 9</td>
+</tr>
+	<tr>
+<td>4 </td>
+<td>16</td>
+</tr>
+	<tr>
+<td>5 </td>
+<td>25</td>
+</tr>
 </tbody>
 </table>
 
@@ -1554,7 +1696,8 @@ Data frames are 2-dimensional tabular data object in R programming. Data frames 
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Indexing and Extracting Elements:</strong></p>
 
@@ -1568,7 +1711,7 @@ Data frames are 2-dimensional tabular data object in R programming. Data frames 
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">Name</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Ramesh&quot;</span><span class="p">,</span> <span class="s">&quot;Tarun&quot;</span><span class="p">,</span> <span class="s">&quot;Shekar&quot;</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">Name</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">"Ramesh"</span><span class="p">,</span> <span class="s">"Tarun"</span><span class="p">,</span> <span class="s">"Shekar"</span><span class="p">)</span>
 <span class="n">age</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">23</span><span class="p">,</span> <span class="m">54</span><span class="p">,</span> <span class="m">32</span><span class="p">)</span>
 <span class="n">height</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">4.6</span><span class="p">,</span><span class="m">5.4</span><span class="p">,</span><span class="m">6.2</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">Name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
@@ -1587,11 +1730,27 @@ Data frames are 2-dimensional tabular data object in R programming. Data frames 
 
 <div class="output_html rendered_html output_subarea ">
 <table>
-<thead><tr><th scope="col">Name</th><th scope="col">age</th><th scope="col">height</th></tr></thead>
+<thead><tr>
+<th scope="col">Name</th>
+<th scope="col">age</th>
+<th scope="col">height</th>
+</tr></thead>
 <tbody>
-	<tr><td>Ramesh</td><td>23    </td><td>4.6   </td></tr>
-	<tr><td>Tarun </td><td>54    </td><td>5.4   </td></tr>
-	<tr><td>Shekar</td><td>32    </td><td>6.2   </td></tr>
+	<tr>
+<td>Ramesh</td>
+<td>23    </td>
+<td>4.6   </td>
+</tr>
+	<tr>
+<td>Tarun </td>
+<td>54    </td>
+<td>5.4   </td>
+</tr>
+	<tr>
+<td>Shekar</td>
+<td>32    </td>
+<td>6.2   </td>
+</tr>
 </tbody>
 </table>
 
@@ -1686,7 +1845,7 @@ Levels: Ramesh Shekar Tarun
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[,</span><span class="s">&#39;Name&#39;</span><span class="p">])</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[,</span><span class="s">'Name'</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -1718,7 +1877,7 @@ Levels: Ramesh Shekar Tarun
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;Name&#39;</span><span class="p">,</span><span class="s">&#39;age&#39;</span><span class="p">)])</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">'Name'</span><span class="p">,</span><span class="s">'age'</span><span class="p">)])</span>
 </pre></div>
 
     </div>
@@ -1745,7 +1904,8 @@ Levels: Ramesh Shekar Tarun
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Create a dataframe using <code>expand.grid()</code> method</strong></p>
 
@@ -1759,7 +1919,7 @@ Levels: Ramesh Shekar Tarun
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">eg</span> <span class="o">&lt;-</span> <span class="nf">expand.grid</span><span class="p">(</span><span class="n">pants</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="s">&quot;black&quot;</span><span class="p">),</span> <span class="n">shirt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;white&quot;</span><span class="p">,</span> <span class="s">&quot;grey&quot;</span><span class="p">,</span> <span class="s">&quot;plaid&quot;</span><span class="p">))</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">eg</span> <span class="o">&lt;-</span> <span class="nf">expand.grid</span><span class="p">(</span><span class="n">pants</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">"blue"</span><span class="p">,</span> <span class="s">"black"</span><span class="p">),</span> <span class="n">shirt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">"white"</span><span class="p">,</span> <span class="s">"grey"</span><span class="p">,</span> <span class="s">"plaid"</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">eg</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">eg</span><span class="p">)</span>
 </pre></div>
@@ -1774,7 +1934,7 @@ Levels: Ramesh Shekar Tarun
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;data.frame&#34;
+<pre>[1] "data.frame"
   pants shirt
 1  blue white
 2 black white
@@ -1792,14 +1952,18 @@ Levels: Ramesh Shekar Tarun
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="lists">lists<a class="anchor-link" href="#lists"> </a></h3>
+<h3 id="lists">
+<a class="anchor" href="#lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>lists<a class="anchor-link" href="#lists"> </a>
+</h3>
 </div>
 </div>
 </div>Lists
 List is another type of object in R programming. List can contain heterogeneous data types such as vectors or another lists.
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>List is a special vector. Each element can be a different class.</li>
@@ -1808,7 +1972,7 @@ List is another type of object in R programming. List can contain heterogeneous 
 <li>a list can be anything, and two elements within a list can be of different types!</li>
 <li>Lists are sometimes called recursive vectors, because a list can contain other lists</li>
 </ul>
-<p><strong>Create a ists using list function</strong><br />
+<p><strong>Create a ists using list function</strong><br>
 <code>x &lt;- list(1, "a", TRUE, 1+4i)</code></p>
 
 </div>
@@ -1821,7 +1985,7 @@ List is another type of object in R programming. List can contain heterogeneous 
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">lst1</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="m">1+4i</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">lst1</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">"a"</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="m">1+4i</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">lst1</span><span class="p">)</span>
 </pre></div>
 
@@ -1839,7 +2003,7 @@ List is another type of object in R programming. List can contain heterogeneous 
 [1] 1
 
 [[2]]
-[1] &#34;a&#34;
+[1] "a"
 
 [[3]]
 [1] TRUE
@@ -1857,7 +2021,8 @@ List is another type of object in R programming. List can contain heterogeneous 
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Indexing</strong></p>
 
@@ -2064,16 +2229,16 @@ Traceback:
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">v</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;banana&quot;</span><span class="p">,</span> <span class="s">&quot;cherry&quot;</span><span class="p">,</span> <span class="s">&quot;orange&quot;</span><span class="p">,</span> <span class="s">&quot;mango&quot;</span><span class="p">,</span> <span class="s">&quot;pineapple&quot;</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">v</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">"apple"</span><span class="p">,</span> <span class="s">"banana"</span><span class="p">,</span> <span class="s">"cherry"</span><span class="p">,</span> <span class="s">"orange"</span><span class="p">,</span> <span class="s">"mango"</span><span class="p">,</span> <span class="s">"pineapple"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 <span class="c1">#creating matrix</span>
-<span class="n">m</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;banana&quot;</span><span class="p">,</span> <span class="s">&quot;cherry&quot;</span><span class="p">,</span> <span class="s">&quot;orange&quot;</span><span class="p">,</span> <span class="s">&quot;mango&quot;</span><span class="p">,</span> <span class="s">&quot;pineapple&quot;</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<span class="n">m</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">"apple"</span><span class="p">,</span> <span class="s">"banana"</span><span class="p">,</span> <span class="s">"cherry"</span><span class="p">,</span> <span class="s">"orange"</span><span class="p">,</span> <span class="s">"mango"</span><span class="p">,</span> <span class="s">"pineapple"</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span><span class="m">2</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 <span class="c1">#creating array</span>
-<span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">array</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;banana&quot;</span><span class="p">,</span> <span class="s">&quot;cherry&quot;</span><span class="p">,</span> <span class="s">&quot;orange&quot;</span><span class="p">,</span> <span class="s">&quot;mango&quot;</span><span class="p">,</span> <span class="s">&quot;pineapple&quot;</span><span class="p">),</span> <span class="n">dim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">array</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">"apple"</span><span class="p">,</span> <span class="s">"banana"</span><span class="p">,</span> <span class="s">"cherry"</span><span class="p">,</span> <span class="s">"orange"</span><span class="p">,</span> <span class="s">"mango"</span><span class="p">,</span> <span class="s">"pineapple"</span><span class="p">),</span> <span class="n">dim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="c1">#creating dataframe</span>
-<span class="n">Name</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Ramesh&quot;</span><span class="p">,</span> <span class="s">&quot;Tarun&quot;</span><span class="p">,</span> <span class="s">&quot;Shekar&quot;</span><span class="p">)</span>
+<span class="n">Name</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">"Ramesh"</span><span class="p">,</span> <span class="s">"Tarun"</span><span class="p">,</span> <span class="s">"Shekar"</span><span class="p">)</span>
 <span class="n">age</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">23</span><span class="p">,</span> <span class="m">54</span><span class="p">,</span> <span class="m">32</span><span class="p">)</span>
 <span class="n">height</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">4.6</span><span class="p">,</span><span class="m">5.4</span><span class="p">,</span><span class="m">6.2</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">Name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
@@ -2090,22 +2255,22 @@ Traceback:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;apple&#34;     &#34;banana&#34;    &#34;cherry&#34;    &#34;orange&#34;    &#34;mango&#34;     &#34;pineapple&#34;
+<pre>[1] "apple"     "banana"    "cherry"    "orange"    "mango"     "pineapple"
      [,1]     [,2]       
-[1,] &#34;apple&#34;  &#34;orange&#34;   
-[2,] &#34;banana&#34; &#34;mango&#34;    
-[3,] &#34;cherry&#34; &#34;pineapple&#34;
+[1,] "apple"  "orange"   
+[2,] "banana" "mango"    
+[3,] "cherry" "pineapple"
 , , 1
 
      [,1]     [,2]    
-[1,] &#34;apple&#34;  &#34;cherry&#34;
-[2,] &#34;banana&#34; &#34;orange&#34;
+[1,] "apple"  "cherry"
+[2,] "banana" "orange"
 
 , , 2
 
      [,1]        [,2]    
-[1,] &#34;mango&#34;     &#34;apple&#34; 
-[2,] &#34;pineapple&#34; &#34;banana&#34;
+[1,] "mango"     "apple" 
+[2,] "pineapple" "banana"
 
     Name age height
 1 Ramesh  23    4.6
@@ -2143,28 +2308,28 @@ Traceback:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;list&#34;
+<pre>[1] "list"
 [[1]]
-[1] &#34;apple&#34;     &#34;banana&#34;    &#34;cherry&#34;    &#34;orange&#34;    &#34;mango&#34;     &#34;pineapple&#34;
+[1] "apple"     "banana"    "cherry"    "orange"    "mango"     "pineapple"
 
 [[2]]
      [,1]     [,2]       
-[1,] &#34;apple&#34;  &#34;orange&#34;   
-[2,] &#34;banana&#34; &#34;mango&#34;    
-[3,] &#34;cherry&#34; &#34;pineapple&#34;
+[1,] "apple"  "orange"   
+[2,] "banana" "mango"    
+[3,] "cherry" "pineapple"
 
 [[3]]
 , , 1
 
      [,1]     [,2]    
-[1,] &#34;apple&#34;  &#34;cherry&#34;
-[2,] &#34;banana&#34; &#34;orange&#34;
+[1,] "apple"  "cherry"
+[2,] "banana" "orange"
 
 , , 2
 
      [,1]        [,2]    
-[1,] &#34;mango&#34;     &#34;apple&#34; 
-[2,] &#34;pineapple&#34; &#34;banana&#34;
+[1,] "mango"     "apple" 
+[2,] "pineapple" "banana"
 
 
 [[4]]
@@ -2178,7 +2343,7 @@ Traceback:
 [1] 1
 
 [[5]][[2]]
-[1] &#34;a&#34;
+[1] "a"
 
 [[5]][[3]]
 [1] TRUE
@@ -2292,9 +2457,18 @@ Traceback:
 <div class="output_html rendered_html output_subarea ">
 <table>
 <tbody>
-	<tr><td>apple    </td><td>orange   </td></tr>
-	<tr><td>banana   </td><td>mango    </td></tr>
-	<tr><td>cherry   </td><td>pineapple</td></tr>
+	<tr>
+<td>apple    </td>
+<td>orange   </td>
+</tr>
+	<tr>
+<td>banana   </td>
+<td>mango    </td>
+</tr>
+	<tr>
+<td>cherry   </td>
+<td>pineapple</td>
+</tr>
 </tbody>
 </table>
 
@@ -2363,14 +2537,14 @@ Traceback:
 <pre>, , 1
 
      [,1]     [,2]    
-[1,] &#34;apple&#34;  &#34;cherry&#34;
-[2,] &#34;banana&#34; &#34;orange&#34;
+[1,] "apple"  "cherry"
+[2,] "banana" "orange"
 
 , , 2
 
      [,1]        [,2]    
-[1,] &#34;mango&#34;     &#34;apple&#34; 
-[2,] &#34;pineapple&#34; &#34;banana&#34;
+[1,] "mango"     "apple" 
+[2,] "pineapple" "banana"
 
 </pre>
 </div>
@@ -2403,8 +2577,8 @@ Traceback:
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>     [,1]        [,2]    
-[1,] &#34;mango&#34;     &#34;apple&#34; 
-[2,] &#34;pineapple&#34; &#34;banana&#34;
+[1,] "mango"     "apple" 
+[2,] "pineapple" "banana"
 </pre>
 </div>
 </div>
@@ -2435,7 +2609,7 @@ Traceback:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;pineapple&#34;
+<pre>[1] "pineapple"
 </pre>
 </div>
 </div>
@@ -2536,7 +2710,7 @@ Levels: Ramesh Shekar Tarun
 [1] 1
 
 [[2]]
-[1] &#34;a&#34;
+[1] "a"
 
 [[3]]
 [1] TRUE
@@ -2574,7 +2748,7 @@ Levels: Ramesh Shekar Tarun
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;a&#34;
+<pre>[1] "a"
 </pre>
 </div>
 </div>
@@ -2585,14 +2759,16 @@ Levels: Ramesh Shekar Tarun
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="/images/copied_from_nb/imgs/c73sZAd.png" alt="" /></p>
+<p><img src="/images/copied_from_nb/imgs/c73sZAd.png" alt=""></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Reshaping R Objects</strong></p>
 
@@ -2828,14 +3004,105 @@ Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
 
 <div class="output_html rendered_html output_subarea ">
 <table>
-<thead><tr><th></th><th scope="col">mpg</th><th scope="col">cyl</th><th scope="col">disp</th><th scope="col">hp</th><th scope="col">drat</th><th scope="col">wt</th><th scope="col">qsec</th><th scope="col">vs</th><th scope="col">am</th><th scope="col">gear</th><th scope="col">carb</th></tr></thead>
+<thead><tr>
+<th></th>
+<th scope="col">mpg</th>
+<th scope="col">cyl</th>
+<th scope="col">disp</th>
+<th scope="col">hp</th>
+<th scope="col">drat</th>
+<th scope="col">wt</th>
+<th scope="col">qsec</th>
+<th scope="col">vs</th>
+<th scope="col">am</th>
+<th scope="col">gear</th>
+<th scope="col">carb</th>
+</tr></thead>
 <tbody>
-	<tr><th scope="row">Mazda RX4</th><td>21.0 </td><td>6    </td><td>160  </td><td>110  </td><td>3.90 </td><td>2.620</td><td>16.46</td><td>0    </td><td>1    </td><td>4    </td><td>4    </td></tr>
-	<tr><th scope="row">Mazda RX4 Wag</th><td>21.0 </td><td>6    </td><td>160  </td><td>110  </td><td>3.90 </td><td>2.875</td><td>17.02</td><td>0    </td><td>1    </td><td>4    </td><td>4    </td></tr>
-	<tr><th scope="row">Datsun 710</th><td>22.8 </td><td>4    </td><td>108  </td><td> 93  </td><td>3.85 </td><td>2.320</td><td>18.61</td><td>1    </td><td>1    </td><td>4    </td><td>1    </td></tr>
-	<tr><th scope="row">Hornet 4 Drive</th><td>21.4 </td><td>6    </td><td>258  </td><td>110  </td><td>3.08 </td><td>3.215</td><td>19.44</td><td>1    </td><td>0    </td><td>3    </td><td>1    </td></tr>
-	<tr><th scope="row">Hornet Sportabout</th><td>18.7 </td><td>8    </td><td>360  </td><td>175  </td><td>3.15 </td><td>3.440</td><td>17.02</td><td>0    </td><td>0    </td><td>3    </td><td>2    </td></tr>
-	<tr><th scope="row">Valiant</th><td>18.1 </td><td>6    </td><td>225  </td><td>105  </td><td>2.76 </td><td>3.460</td><td>20.22</td><td>1    </td><td>0    </td><td>3    </td><td>1    </td></tr>
+	<tr>
+<th scope="row">Mazda RX4</th>
+<td>21.0 </td>
+<td>6    </td>
+<td>160  </td>
+<td>110  </td>
+<td>3.90 </td>
+<td>2.620</td>
+<td>16.46</td>
+<td>0    </td>
+<td>1    </td>
+<td>4    </td>
+<td>4    </td>
+</tr>
+	<tr>
+<th scope="row">Mazda RX4 Wag</th>
+<td>21.0 </td>
+<td>6    </td>
+<td>160  </td>
+<td>110  </td>
+<td>3.90 </td>
+<td>2.875</td>
+<td>17.02</td>
+<td>0    </td>
+<td>1    </td>
+<td>4    </td>
+<td>4    </td>
+</tr>
+	<tr>
+<th scope="row">Datsun 710</th>
+<td>22.8 </td>
+<td>4    </td>
+<td>108  </td>
+<td> 93  </td>
+<td>3.85 </td>
+<td>2.320</td>
+<td>18.61</td>
+<td>1    </td>
+<td>1    </td>
+<td>4    </td>
+<td>1    </td>
+</tr>
+	<tr>
+<th scope="row">Hornet 4 Drive</th>
+<td>21.4 </td>
+<td>6    </td>
+<td>258  </td>
+<td>110  </td>
+<td>3.08 </td>
+<td>3.215</td>
+<td>19.44</td>
+<td>1    </td>
+<td>0    </td>
+<td>3    </td>
+<td>1    </td>
+</tr>
+	<tr>
+<th scope="row">Hornet Sportabout</th>
+<td>18.7 </td>
+<td>8    </td>
+<td>360  </td>
+<td>175  </td>
+<td>3.15 </td>
+<td>3.440</td>
+<td>17.02</td>
+<td>0    </td>
+<td>0    </td>
+<td>3    </td>
+<td>2    </td>
+</tr>
+	<tr>
+<th scope="row">Valiant</th>
+<td>18.1 </td>
+<td>6    </td>
+<td>225  </td>
+<td>105  </td>
+<td>2.76 </td>
+<td>3.460</td>
+<td>20.22</td>
+<td>1    </td>
+<td>0    </td>
+<td>3    </td>
+<td>1    </td>
+</tr>
 </tbody>
 </table>
 
@@ -2914,18 +3181,18 @@ $gear
 $carb
  [1] 4 4 1 1 2 1 4 2 2 4 4 3 3 3 4 4 4 1 2 1 1 2 2 4 2 1 2 2 4 6 8 2
 
-attr(,&#34;row.names&#34;)
- [1] &#34;Mazda RX4&#34;           &#34;Mazda RX4 Wag&#34;       &#34;Datsun 710&#34;         
- [4] &#34;Hornet 4 Drive&#34;      &#34;Hornet Sportabout&#34;   &#34;Valiant&#34;            
- [7] &#34;Duster 360&#34;          &#34;Merc 240D&#34;           &#34;Merc 230&#34;           
-[10] &#34;Merc 280&#34;            &#34;Merc 280C&#34;           &#34;Merc 450SE&#34;         
-[13] &#34;Merc 450SL&#34;          &#34;Merc 450SLC&#34;         &#34;Cadillac Fleetwood&#34; 
-[16] &#34;Lincoln Continental&#34; &#34;Chrysler Imperial&#34;   &#34;Fiat 128&#34;           
-[19] &#34;Honda Civic&#34;         &#34;Toyota Corolla&#34;      &#34;Toyota Corona&#34;      
-[22] &#34;Dodge Challenger&#34;    &#34;AMC Javelin&#34;         &#34;Camaro Z28&#34;         
-[25] &#34;Pontiac Firebird&#34;    &#34;Fiat X1-9&#34;           &#34;Porsche 914-2&#34;      
-[28] &#34;Lotus Europa&#34;        &#34;Ford Pantera L&#34;      &#34;Ferrari Dino&#34;       
-[31] &#34;Maserati Bora&#34;       &#34;Volvo 142E&#34;         
+attr(,"row.names")
+ [1] "Mazda RX4"           "Mazda RX4 Wag"       "Datsun 710"         
+ [4] "Hornet 4 Drive"      "Hornet Sportabout"   "Valiant"            
+ [7] "Duster 360"          "Merc 240D"           "Merc 230"           
+[10] "Merc 280"            "Merc 280C"           "Merc 450SE"         
+[13] "Merc 450SL"          "Merc 450SLC"         "Cadillac Fleetwood" 
+[16] "Lincoln Continental" "Chrysler Imperial"   "Fiat 128"           
+[19] "Honda Civic"         "Toyota Corolla"      "Toyota Corona"      
+[22] "Dodge Challenger"    "AMC Javelin"         "Camaro Z28"         
+[25] "Pontiac Firebird"    "Fiat X1-9"           "Porsche 914-2"      
+[28] "Lotus Europa"        "Ford Pantera L"      "Ferrari Dino"       
+[31] "Maserati Bora"       "Volvo 142E"         
 $mpg
  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4
 [16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7
@@ -2980,26 +3247,33 @@ $carb
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Operators">Operators<a class="anchor-link" href="#Operators"> </a></h2>
+<h2 id="Operators">
+<a class="anchor" href="#Operators" aria-hidden="true"><span class="octicon octicon-link"></span></a>Operators<a class="anchor-link" href="#Operators"> </a>
+</h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Assignment Operators <code>(&lt;−  =  &lt;&lt;−  -&gt;  -&gt;&gt;)</code><br />
-Arithmetic Operators  <code>(+  -  *  /  %%</code> (modulo)  <code>%/%</code>(integer divide) <code>^</code>(raised to the power of))<br />
-Relational Operators<code>(&gt;  &lt;  &lt;=  &gt;=  ==  !=  )</code><br />
-Logical Operators   <code>(&amp;  |  !  &amp;&amp;  ||)</code><br />
+<p>Assignment Operators <code>(&lt;−  =  &lt;&lt;−  -&gt;  -&gt;&gt;)</code><br>
+Arithmetic Operators  <code>(+  -  *  /  %%</code> (modulo)  <code>%/%</code>(integer divide) <code>^</code>(raised to the power of))<br>
+Relational Operators<code>(&gt;  &lt;  &lt;=  &gt;=  ==  !=  )</code><br>
+Logical Operators   <code>(&amp;  |  !  &amp;&amp;  ||)</code><br>
 Miscellaneous Operators <code>(:  %in%  %*%)</code></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Assignment-operators:">Assignment operators:<a class="anchor-link" href="#Assignment-operators:"> </a></h3>
+<h3 id="Assignment-operators:">
+<a class="anchor" href="#Assignment-operators:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assignment operators:<a class="anchor-link" href="#Assignment-operators:"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -3012,7 +3286,7 @@ Miscellaneous Operators <code>(:  %in%  %*%)</code></p>
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">5.67</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s">&#39;data&#39;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s">'data'</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="m">6+5i</span> <span class="o">-&gt;</span> <span class="n">c</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
@@ -3029,7 +3303,7 @@ Miscellaneous Operators <code>(:  %in%  %*%)</code></p>
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[1] 5.67
-[1] &#34;data&#34;
+[1] "data"
 [1] 6+5i
 </pre>
 </div>
@@ -3125,9 +3399,12 @@ works its way up towards the global environment
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Arithmetic-operators:">Arithmetic operators:<a class="anchor-link" href="#Arithmetic-operators:"> </a></h3>
+<h3 id="Arithmetic-operators:">
+<a class="anchor" href="#Arithmetic-operators:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Arithmetic operators:<a class="anchor-link" href="#Arithmetic-operators:"> </a>
+</h3>
 </div>
 </div>
 </div>Arithmetic Operators
@@ -3185,15 +3462,19 @@ x%/%y       Integer Division  5%/%2 is 2
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Relational-operators:">Relational operators:<a class="anchor-link" href="#Relational-operators:"> </a></h3>
+<h3 id="Relational-operators:">
+<a class="anchor" href="#Relational-operators:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Relational operators:<a class="anchor-link" href="#Relational-operators:"> </a>
+</h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Description</strong><br />
+<p><strong>Description</strong><br>
 <em>Binary operators which allow the comparison of values in atomic vectors.</em></p>
 
 </div>
@@ -3248,16 +3529,20 @@ x%/%y       Integer Division  5%/%2 is 2
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Logical-operators:">Logical operators:<a class="anchor-link" href="#Logical-operators:"> </a></h3>
+<h3 id="Logical-operators:">
+<a class="anchor" href="#Logical-operators:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logical operators:<a class="anchor-link" href="#Logical-operators:"> </a>
+</h3>
 </div>
 </div>
 </div>Operator     Description                 Example
 !x           not x                       x &lt;- c(5), !x
 x | y        x or y                      x &lt;- c(5), y &lt;- c(10), x | y
 x &amp; y        x and y                     x &lt;- c(5), y &lt;- c(10), x &amp; y
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Logical AND (<code>&amp;&amp;</code>) and Logical OR (<code>||</code>)</strong></p>
 
@@ -3330,20 +3615,25 @@ x &amp; y        x and y                     x &lt;- c(5), y &lt;- c(10), x &amp
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Miscellaneous-operators:">Miscellaneous operators:<a class="anchor-link" href="#Miscellaneous-operators:"> </a></h3>
+<h3 id="Miscellaneous-operators:">
+<a class="anchor" href="#Miscellaneous-operators:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Miscellaneous operators:<a class="anchor-link" href="#Miscellaneous-operators:"> </a>
+</h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>(<code>:  %in%  %*%</code>)</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong><code>:</code> Operator</strong></p>
 
@@ -3385,7 +3675,8 @@ x &amp; y        x and y                     x &lt;- c(5), y &lt;- c(10), x &amp
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong><code>%in%</code> Operator</strong></p>
 
@@ -3428,7 +3719,8 @@ x &amp; y        x and y                     x &lt;- c(5), y &lt;- c(10), x &amp
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong><code>%*%</code> Operator</strong></p>
 
@@ -3577,9 +3869,10 @@ x &amp; y        x and y                     x &lt;- c(5), y &lt;- c(10), x &amp
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Special values</strong><br />
+<p><strong>Special values</strong><br>
 <code>NA, NULL, ±Inf and NaN</code></p>
 
 </div>
@@ -3817,14 +4110,16 @@ NaN
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><font size="3"><sub>Help: <a href="https://www.r-bloggers.com/2018/07/r-null-values-null-na-nan-inf/" target="_blank">https://www.r-bloggers.com/</a></sub></font></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Coercion and Testing an Object:</strong></p>
 
@@ -3833,14 +4128,16 @@ NaN
 </div>Internal (implicit) coercion
 External coercion and testing objectsInternal (implicit) coercion:  
 If the two arguments are atomic vectors of different modes, one is coerced to the type of the other, the (decreasing) order of precedence being character, complex, numeric, integer, logical 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="/images/copied_from_nb/imgs/6uz95Br.jpg" alt="" /></p>
+<p><img src="/images/copied_from_nb/imgs/6uz95Br.jpg" alt=""></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Guess what the following do without running them first</p>
 
@@ -3865,9 +4162,9 @@ This is called implicit coercion.</code></pre>
 <span class="nf">print</span><span class="p">(</span><span class="nf">mode</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">)))</span>
 
 
-<span class="nf">print</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
-<span class="c1"># character &#39;a&#39;, &#39;1&#39;</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">mode</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="m">1</span><span class="p">)))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">"a"</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
+<span class="c1"># character 'a', '1'</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">mode</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">"a"</span><span class="p">,</span> <span class="m">1</span><span class="p">)))</span>
 
 <span class="nf">print</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="m">1L</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">mode</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="m">1L</span><span class="p">)))</span>
@@ -3887,13 +4184,13 @@ This is called implicit coercion.</code></pre>
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[1] 1 0
-[1] &#34;numeric&#34;
-[1] &#34;a&#34; &#34;1&#34;
-[1] &#34;character&#34;
+[1] "numeric"
+[1] "a" "1"
+[1] "character"
 [1] 1 1
-[1] &#34;numeric&#34;
+[1] "numeric"
 [1] 3.427 1.000
-[1] &#34;numeric&#34;
+[1] "numeric"
 </pre>
 </div>
 </div>
@@ -3904,53 +4201,64 @@ This is called implicit coercion.</code></pre>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>External coercion and testing objects:</strong><br />
+<p><strong>External coercion and testing objects:</strong><br>
 These following function will be used to test the object and convert to another object with coercing</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="/images/copied_from_nb/imgs/hYYdi9O.png" alt="" /></p>
+<p><img src="/images/copied_from_nb/imgs/hYYdi9O.png" alt=""></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>while testing the objects</strong><br />
-Use <code>is.atomic()</code> to test if an object is either atomic vector or <code>is.recursive()</code> || <code>is.list()</code> for recursive list.<br />
-<code>is.atomic()</code> is more suitable for testing if an object is a vector.<br />
-<code>is.list()</code> tests whether an object is truly a list.<br />
-<code>is.numeric()</code>, similarly, is TRUE for either integer or double vectors, but not for lists.<br />
+<p><strong>while testing the objects</strong><br>
+Use <code>is.atomic()</code> to test if an object is either atomic vector or <code>is.recursive()</code> || <code>is.list()</code> for recursive list.<br>
+<code>is.atomic()</code> is more suitable for testing if an object is a vector.<br>
+<code>is.list()</code> tests whether an object is truly a list.<br>
+<code>is.numeric()</code>, similarly, is TRUE for either integer or double vectors, but not for lists.<br>
 <font size="3"><sub>Help: <a href="https://bookdown.org/medepi/phds/working-with-vectores-matrices-and-arrays.html" target="_blank">https://bookdown.org/</a></sub></font></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Control-Structures-&amp;-Loops">Control Structures &amp; Loops<a class="anchor-link" href="#Control-Structures-&amp;-Loops"> </a></h2>
+<h2 id="Control-Structures-&amp;-Loops">
+<a class="anchor" href="#Control-Structures-&amp;-Loops" aria-hidden="true"><span class="octicon octicon-link"></span></a>Control Structures &amp; Loops<a class="anchor-link" href="#Control-Structures-&amp;-Loops"> </a>
+</h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>(decision making statements)</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="if">if<a class="anchor-link" href="#if"> </a></h3>
+<h3 id="if">
+<a class="anchor" href="#if" aria-hidden="true"><span class="octicon octicon-link"></span></a>if<a class="anchor-link" href="#if"> </a>
+</h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>If Condition</strong></p>
 
@@ -3968,7 +4276,7 @@ Use <code>is.atomic()</code> to test if an object is either atomic vector or <co
 <span class="n">num2</span><span class="o">=</span><span class="m">20</span> 
 <span class="nf">if</span><span class="p">(</span><span class="n">num1</span><span class="o">&lt;=</span><span class="n">num2</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="nf">print</span><span class="p">(</span><span class="s">&quot;Num1 is less or equal to Num2&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"Num1 is less or equal to Num2"</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -3982,7 +4290,7 @@ Use <code>is.atomic()</code> to test if an object is either atomic vector or <co
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;Num1 is less or equal to Num2&#34;
+<pre>[1] "Num1 is less or equal to Num2"
 </pre>
 </div>
 </div>
@@ -3993,9 +4301,12 @@ Use <code>is.atomic()</code> to test if an object is either atomic vector or <co
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="if-else">if else<a class="anchor-link" href="#if-else"> </a></h3>
+<h3 id="if-else">
+<a class="anchor" href="#if-else" aria-hidden="true"><span class="octicon octicon-link"></span></a>if else<a class="anchor-link" href="#if-else"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -4009,10 +4320,10 @@ Use <code>is.atomic()</code> to test if an object is either atomic vector or <co
 <div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">15</span>
 <span class="nf">if </span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="m">10</span><span class="p">)</span> 
 <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;x is less than 10&quot;</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"x is less than 10"</span><span class="p">)</span>
 <span class="p">}</span> <span class="n">else</span> 
 <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;x is greater than 10&quot;</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"x is greater than 10"</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -4026,7 +4337,7 @@ Use <code>is.atomic()</code> to test if an object is either atomic vector or <co
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;x is less than 10&#34;
+<pre>[1] "x is less than 10"
 </pre>
 </div>
 </div>
@@ -4037,7 +4348,8 @@ Use <code>is.atomic()</code> to test if an object is either atomic vector or <co
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Another way of ifelse in R:</strong></p>
 
@@ -4052,7 +4364,7 @@ Use <code>is.atomic()</code> to test if an object is either atomic vector or <co
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">15</span>
-<span class="nf">ifelse</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="m">10</span><span class="p">,</span> <span class="s">&quot;x less than 10&quot;</span><span class="p">,</span> <span class="s">&quot;x greater than 10&quot;</span><span class="p">)</span>
+<span class="nf">ifelse</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="m">10</span><span class="p">,</span> <span class="s">"x less than 10"</span><span class="p">,</span> <span class="s">"x greater than 10"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -4094,11 +4406,12 @@ Use <code>is.atomic()</code> to test if an object is either atomic vector or <co
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><figure>
   
-    <img class="docimage" src="/images/copied_from_nb/imgs/YQfqXlY.png" alt="drawing" style="max-width: 600px" />
+    <img class="docimage" src="/images/copied_from_nb/imgs/YQfqXlY.png" alt="drawing" style="max-width: 600px">
     
     
 </figure>
@@ -4107,9 +4420,12 @@ Use <code>is.atomic()</code> to test if an object is either atomic vector or <co
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="If-else-if">If else if<a class="anchor-link" href="#If-else-if"> </a></h3>
+<h3 id="If-else-if">
+<a class="anchor" href="#If-else-if" aria-hidden="true"><span class="octicon octicon-link"></span></a>If else if<a class="anchor-link" href="#If-else-if"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -4120,14 +4436,14 @@ Use <code>is.atomic()</code> to test if an object is either atomic vector or <co
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;what&quot;</span><span class="p">,</span><span class="s">&quot;is&quot;</span><span class="p">,</span><span class="s">&quot;truth&quot;</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">"what"</span><span class="p">,</span><span class="s">"is"</span><span class="p">,</span><span class="s">"truth"</span><span class="p">)</span>
 
-<span class="nf">if</span><span class="p">(</span><span class="s">&quot;Truth&quot;</span> <span class="o">%in%</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Truth is found the first time&quot;</span><span class="p">)</span>
-<span class="p">}</span> <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="s">&quot;truth&quot;</span> <span class="o">%in%</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nf">print</span><span class="p">(</span><span class="s">&quot;truth is found the second time&quot;</span><span class="p">)</span>
+<span class="nf">if</span><span class="p">(</span><span class="s">"Truth"</span> <span class="o">%in%</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nf">print</span><span class="p">(</span><span class="s">"Truth is found the first time"</span><span class="p">)</span>
+<span class="p">}</span> <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="s">"truth"</span> <span class="o">%in%</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nf">print</span><span class="p">(</span><span class="s">"truth is found the second time"</span><span class="p">)</span>
 <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
-   <span class="nf">print</span><span class="p">(</span><span class="s">&quot;No truth found&quot;</span><span class="p">)</span>
+   <span class="nf">print</span><span class="p">(</span><span class="s">"No truth found"</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -4141,7 +4457,7 @@ Use <code>is.atomic()</code> to test if an object is either atomic vector or <co
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;truth is found the second time&#34;
+<pre>[1] "truth is found the second time"
 </pre>
 </div>
 </div>
@@ -4152,15 +4468,19 @@ Use <code>is.atomic()</code> to test if an object is either atomic vector or <co
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="for">for<a class="anchor-link" href="#for"> </a></h3>
+<h3 id="for">
+<a class="anchor" href="#for" aria-hidden="true"><span class="octicon octicon-link"></span></a>for<a class="anchor-link" href="#for"> </a>
+</h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>For Loop:</strong><br />
+<p><strong>For Loop:</strong><br>
 To repeats a statement or group of for a fixed number of times.</p>
 
 </div>
@@ -4173,7 +4493,7 @@ To repeats a statement or group of for a fixed number of times.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;aaa&quot;</span><span class="p">,</span><span class="s">&quot;bbb&quot;</span><span class="p">,</span><span class="s">&quot;ccc&quot;</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">"aaa"</span><span class="p">,</span><span class="s">"bbb"</span><span class="p">,</span><span class="s">"ccc"</span><span class="p">)</span>
 <span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="n">vector</span><span class="p">){</span>   
    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>   
 <span class="p">}</span>
@@ -4189,9 +4509,9 @@ To repeats a statement or group of for a fixed number of times.</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;aaa&#34;
-[1] &#34;bbb&#34;
-[1] &#34;ccc&#34;
+<pre>[1] "aaa"
+[1] "bbb"
+[1] "ccc"
 </pre>
 </div>
 </div>
@@ -4210,7 +4530,7 @@ To repeats a statement or group of for a fixed number of times.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">year</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="m">2010</span><span class="p">,</span><span class="m">2011</span><span class="p">,</span><span class="m">2012</span><span class="p">,</span><span class="m">2013</span><span class="p">,</span><span class="m">2014</span><span class="p">,</span><span class="m">2015</span><span class="p">)){</span>
-  <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;The year is&quot;</span><span class="p">,</span> <span class="n">year</span><span class="p">))</span>
+  <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">"The year is"</span><span class="p">,</span> <span class="n">year</span><span class="p">))</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -4224,12 +4544,12 @@ To repeats a statement or group of for a fixed number of times.</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;The year is 2010&#34;
-[1] &#34;The year is 2011&#34;
-[1] &#34;The year is 2012&#34;
-[1] &#34;The year is 2013&#34;
-[1] &#34;The year is 2014&#34;
-[1] &#34;The year is 2015&#34;
+<pre>[1] "The year is 2010"
+[1] "The year is 2011"
+[1] "The year is 2012"
+[1] "The year is 2013"
+[1] "The year is 2014"
+[1] "The year is 2015"
 </pre>
 </div>
 </div>
@@ -4327,15 +4647,19 @@ To repeats a statement or group of for a fixed number of times.</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="while">while<a class="anchor-link" href="#while"> </a></h3>
+<h3 id="while">
+<a class="anchor" href="#while" aria-hidden="true"><span class="octicon octicon-link"></span></a>while<a class="anchor-link" href="#while"> </a>
+</h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>While Loop:</strong><br />
+<p><strong>While Loop:</strong><br>
 Loop until a specific condition is met</p>
 
 </div>
@@ -4381,15 +4705,19 @@ Loop until a specific condition is met</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="break">break<a class="anchor-link" href="#break"> </a></h3>
+<h3 id="break">
+<a class="anchor" href="#break" aria-hidden="true"><span class="octicon octicon-link"></span></a>break<a class="anchor-link" href="#break"> </a>
+</h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>break Statement:</strong><br />
+<p><strong>break Statement:</strong><br>
 break is used inside any loop like <code>repeat</code>, <code>for</code> or <code>while</code> to stop the iterations and flow the control outside of the loop.</p>
 
 </div>
@@ -4444,7 +4772,7 @@ break is used inside any loop like <code>repeat</code>, <code>for</code> or <cod
 <div class=" highlight hl-r"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span>
 <span class="nf">for </span><span class="p">(</span><span class="n">num</span> <span class="n">in</span> <span class="n">x</span><span class="p">){</span>
     <span class="nf">if </span><span class="p">(</span><span class="n">num</span><span class="o">==</span><span class="m">6</span><span class="p">)</span> <span class="n">break</span>
-    <span class="n">mynum</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="s">&quot;and so on. &quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot; &quot;</span><span class="p">)</span>
+    <span class="n">mynum</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="s">"and so on. "</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">" "</span><span class="p">)</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">mynum</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
@@ -4459,11 +4787,11 @@ break is used inside any loop like <code>repeat</code>, <code>for</code> or <cod
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;1 and so on. &#34;
-[1] &#34;2 and so on. &#34;
-[1] &#34;3 and so on. &#34;
-[1] &#34;4 and so on. &#34;
-[1] &#34;5 and so on. &#34;
+<pre>[1] "1 and so on. "
+[1] "2 and so on. "
+[1] "3 and so on. "
+[1] "4 and so on. "
+[1] "5 and so on. "
 </pre>
 </div>
 </div>
@@ -4474,15 +4802,19 @@ break is used inside any loop like <code>repeat</code>, <code>for</code> or <cod
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="repeat">repeat<a class="anchor-link" href="#repeat"> </a></h3>
+<h3 id="repeat">
+<a class="anchor" href="#repeat" aria-hidden="true"><span class="octicon octicon-link"></span></a>repeat<a class="anchor-link" href="#repeat"> </a>
+</h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Repeat statement:</strong><br />
+<p><strong>Repeat statement:</strong><br>
 Iterate over a block of code multiple number of times.</p>
 
 </div>
@@ -4531,13 +4863,17 @@ Iterate over a block of code multiple number of times.</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="next">next<a class="anchor-link" href="#next"> </a></h3>
+<h3 id="next">
+<a class="anchor" href="#next" aria-hidden="true"><span class="octicon octicon-link"></span></a>next<a class="anchor-link" href="#next"> </a>
+</h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>next Statment:</strong></p>
 <ul>
@@ -4589,15 +4925,19 @@ Iterate over a block of code multiple number of times.</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="switch">switch<a class="anchor-link" href="#switch"> </a></h3>
+<h3 id="switch">
+<a class="anchor" href="#switch" aria-hidden="true"><span class="octicon octicon-link"></span></a>switch<a class="anchor-link" href="#switch"> </a>
+</h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Switch Statment:</strong><br />
+<p><strong>Switch Statment:</strong><br>
 switch statement allows a variable to be tested for equality against a list of values. Each value is called a <strong>case</strong></p>
 
 </div>
@@ -4612,16 +4952,16 @@ switch statement allows a variable to be tested for equality against a list of v
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">number1</span> <span class="o">&lt;-</span> <span class="m">30</span>
 <span class="n">number2</span> <span class="o">&lt;-</span> <span class="m">20</span>
-<span class="n">operator</span> <span class="o">&lt;-</span> <span class="nf">readline</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="s">&quot;Please enter any ARITHMETIC OPERATOR You wish!: &quot;</span><span class="p">)</span>
+<span class="n">operator</span> <span class="o">&lt;-</span> <span class="nf">readline</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="s">"Please enter any ARITHMETIC OPERATOR You wish!: "</span><span class="p">)</span>
  
 <span class="nf">switch</span><span class="p">(</span><span class="n">operator</span><span class="p">,</span>
-       <span class="s">&quot;+&quot;</span> <span class="o">=</span> <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Addition of two numbers is: &quot;</span><span class="p">,</span> <span class="n">number1</span> <span class="o">+</span> <span class="n">number2</span><span class="p">)),</span>
-       <span class="s">&quot;-&quot;</span> <span class="o">=</span> <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Subtraction of two numbers is: &quot;</span><span class="p">,</span> <span class="n">number1</span> <span class="o">-</span> <span class="n">number2</span><span class="p">)),</span>
-       <span class="s">&quot;*&quot;</span> <span class="o">=</span> <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Multiplication of two numbers is: &quot;</span><span class="p">,</span> <span class="n">number1</span> <span class="o">*</span> <span class="n">number2</span><span class="p">)),</span>
-       <span class="s">&quot;^&quot;</span> <span class="o">=</span> <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Exponent of two numbers is: &quot;</span><span class="p">,</span> <span class="n">number1</span> <span class="o">^</span> <span class="n">number2</span><span class="p">)),</span>
-       <span class="s">&quot;/&quot;</span> <span class="o">=</span> <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Division of two numbers is: &quot;</span><span class="p">,</span> <span class="n">number1</span> <span class="o">/</span> <span class="n">number2</span><span class="p">)),</span>
-       <span class="s">&quot;%/%&quot;</span> <span class="o">=</span> <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Integer Division of two numbers is: &quot;</span><span class="p">,</span> <span class="n">number1</span> <span class="o">%/%</span> <span class="n">number2</span><span class="p">)),</span>
-       <span class="s">&quot;%%&quot;</span> <span class="o">=</span> <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Division of two numbers is: &quot;</span><span class="p">,</span> <span class="n">number1</span> <span class="o">%%</span> <span class="n">number2</span><span class="p">))</span>
+       <span class="s">"+"</span> <span class="o">=</span> <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">"Addition of two numbers is: "</span><span class="p">,</span> <span class="n">number1</span> <span class="o">+</span> <span class="n">number2</span><span class="p">)),</span>
+       <span class="s">"-"</span> <span class="o">=</span> <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">"Subtraction of two numbers is: "</span><span class="p">,</span> <span class="n">number1</span> <span class="o">-</span> <span class="n">number2</span><span class="p">)),</span>
+       <span class="s">"*"</span> <span class="o">=</span> <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">"Multiplication of two numbers is: "</span><span class="p">,</span> <span class="n">number1</span> <span class="o">*</span> <span class="n">number2</span><span class="p">)),</span>
+       <span class="s">"^"</span> <span class="o">=</span> <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">"Exponent of two numbers is: "</span><span class="p">,</span> <span class="n">number1</span> <span class="o">^</span> <span class="n">number2</span><span class="p">)),</span>
+       <span class="s">"/"</span> <span class="o">=</span> <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">"Division of two numbers is: "</span><span class="p">,</span> <span class="n">number1</span> <span class="o">/</span> <span class="n">number2</span><span class="p">)),</span>
+       <span class="s">"%/%"</span> <span class="o">=</span> <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">"Integer Division of two numbers is: "</span><span class="p">,</span> <span class="n">number1</span> <span class="o">%/%</span> <span class="n">number2</span><span class="p">)),</span>
+       <span class="s">"%%"</span> <span class="o">=</span> <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">"Division of two numbers is: "</span><span class="p">,</span> <span class="n">number1</span> <span class="o">%%</span> <span class="n">number2</span><span class="p">))</span>
 <span class="p">)</span>
 </pre></div>
 
@@ -4636,7 +4976,7 @@ switch statement allows a variable to be tested for equality against a list of v
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Please enter any ARITHMETIC OPERATOR You wish!: *
-[1] &#34;Multiplication of two numbers is:  600&#34;
+[1] "Multiplication of two numbers is:  600"
 </pre>
 </div>
 </div>
@@ -4647,7 +4987,8 @@ switch statement allows a variable to be tested for equality against a list of v
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><span style="color:red">**Conclusion**</span></p>
 <p><strong>Loops are not recommended until and unless its really needed, since R has vectorisation feature</strong></p>
@@ -4786,40 +5127,52 @@ switch statement allows a variable to be tested for equality against a list of v
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Functions">Functions<a class="anchor-link" href="#Functions"> </a></h2>
+<h2 id="Functions">
+<a class="anchor" href="#Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions<a class="anchor-link" href="#Functions"> </a>
+</h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Functions:</strong></p>
-<blockquote><p>Functions can be described as ”black boxes” that take an input and print out an output based on the operation logic inside the function</p>
+<blockquote>
+<p>Functions can be described as ”black boxes” that take an input and print out an output based on the operation logic inside the function</p>
 </blockquote>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Built-in-functions">Built-in functions<a class="anchor-link" href="#Built-in-functions"> </a></h3>
+<h3 id="Built-in-functions">
+<a class="anchor" href="#Built-in-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Built-in functions<a class="anchor-link" href="#Built-in-functions"> </a>
+</h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>used by the user to make their work easier. Eg:mean(x), sum(x) ,sqrt(x),toupper(x), etc.</p>
+<blockquote>
+<p>used by the user to make their work easier. Eg:mean(x), sum(x) ,sqrt(x),toupper(x), etc.</p>
 </blockquote>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Some Built-in functions for the Objects</strong></p>
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Function</th>
 <th>Description</th>
 </tr>
@@ -4903,10 +5256,12 @@ switch statement allows a variable to be tested for equality against a list of v
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Function</th>
 <th>Description</th>
 </tr>
@@ -4966,7 +5321,8 @@ switch statement allows a variable to be tested for equality against a list of v
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Functions Examples</strong></p>
 
@@ -4984,13 +5340,17 @@ match(x,y)</code></pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="User-defined-functions">User defined functions<a class="anchor-link" href="#User-defined-functions"> </a></h3>
+<h3 id="User-defined-functions">
+<a class="anchor" href="#User-defined-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>User defined functions<a class="anchor-link" href="#User-defined-functions"> </a>
+</h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Sets of instructions that you want to use repeatedly, it is a piece of code written to carry out a specified task, these functions are created by the user to meet a specific requirement of the user.</p>
 <ul>
@@ -5003,12 +5363,15 @@ match(x,y)</code></pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Objects &amp; Functions</strong><br />
+<p><strong>Objects &amp; Functions</strong><br>
 <em>To understand in R two slogans are helpful:</em></p>
-<blockquote><ol>
-<li>Everything that exists is an <strong>object</strong></li>
+<blockquote>
+<ol>
+<li>Everything that exists is an <strong>object</strong>
+</li>
 <li>Everything that happens is a <strong>function</strong> call</li>
 </ol>
 </blockquote>
@@ -5016,7 +5379,8 @@ match(x,y)</code></pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>syntax</strong></p>
 
@@ -5093,7 +5457,7 @@ function_name &lt;–function(arg_1, arg_2, …)
 <div class=" highlight hl-r"><pre><span></span><span class="n">pow</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> 
 <span class="p">{</span>
    <span class="n">result</span> <span class="o">&lt;-</span> <span class="n">x</span><span class="o">^</span><span class="n">y</span>
-   <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="s">&quot;raised to the power&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">&quot;is&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">))</span>
+   <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="s">"raised to the power"</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">"is"</span><span class="p">,</span> <span class="n">result</span><span class="p">))</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -5124,7 +5488,7 @@ function_name &lt;–function(arg_1, arg_2, …)
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;3 raised to the power 5 is 243&#34;
+<pre>[1] "3 raised to the power 5 is 243"
 </pre>
 </div>
 </div>
@@ -5135,7 +5499,8 @@ function_name &lt;–function(arg_1, arg_2, …)
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Default Arguments:</strong></p>
 
@@ -5238,7 +5603,8 @@ function_name &lt;–function(arg_1, arg_2, …)
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Named Arguments:</strong></p>
 
@@ -5256,7 +5622,7 @@ function_name &lt;–function(arg_1, arg_2, …)
    <span class="c1"># function to print x raised to the power y</span>
 
    <span class="n">result</span> <span class="o">&lt;-</span> <span class="n">x</span><span class="o">^</span><span class="n">y</span>
-   <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="s">&quot;raised to the power&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">&quot;is&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">))</span>
+   <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="s">"raised to the power"</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">"is"</span><span class="p">,</span> <span class="n">result</span><span class="p">))</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -5291,9 +5657,9 @@ function_name &lt;–function(arg_1, arg_2, …)
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] &#34;8 raised to the power 2 is 64&#34;
-[1] &#34;8 raised to the power 2 is 64&#34;
-[1] &#34;8 raised to the power 2 is 64&#34;
+<pre>[1] "8 raised to the power 2 is 64"
+[1] "8 raised to the power 2 is 64"
+[1] "8 raised to the power 2 is 64"
 </pre>
 </div>
 </div>
@@ -5304,7 +5670,8 @@ function_name &lt;–function(arg_1, arg_2, …)
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>partial matching:</strong></p>
 
@@ -5403,7 +5770,7 @@ function_name &lt;–function(arg_1, arg_2, …)
 
 <div class="output_subarea output_text output_error">
 <pre>
-Error in testFun(ax = 2, ax = 3): formal argument &#34;axb&#34; matched by multiple actual arguments
+Error in testFun(ax = 2, ax = 3): formal argument "axb" matched by multiple actual arguments
 Traceback:
 </pre>
 </div>
@@ -5447,7 +5814,8 @@ Traceback:
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Functions in R are first class objects</strong></p>
 <ul>
@@ -5511,7 +5879,7 @@ Traceback:
 <div class=" highlight hl-r"><pre><span></span><span class="n">fun</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
     <span class="m">10</span>
 <span class="p">}</span>
-<span class="nf">fun</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">)</span>
+<span class="nf">fun</span><span class="p">(</span><span class="s">"hello"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -5536,14 +5904,16 @@ Traceback:
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Automatic Returns:</strong></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In R, it is not necessary to include the return statement. R automatically returns whichever variable is on the last line of the body of the function.
 OR we can explicitly define the return statement.</p>
@@ -5687,14 +6057,16 @@ OR we can explicitly define the return statement.</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>elipses or three dots (...)</strong></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>which is especially useful for creating customized versions of existing functions or in providing additional options to end-users.</li>
@@ -5718,7 +6090,7 @@ OR we can explicitly define the return statement.</p>
   <span class="nf">paste</span><span class="p">(</span><span class="n">myDots</span><span class="p">)</span>
 <span class="p">}</span>
  
-<span class="nf">printDots</span><span class="p">(</span><span class="s">&quot;how&quot;</span><span class="p">,</span> <span class="s">&quot;is&quot;</span><span class="p">,</span> <span class="s">&quot;your&quot;</span><span class="p">,</span> <span class="s">&quot;health&quot;</span><span class="p">)</span>
+<span class="nf">printDots</span><span class="p">(</span><span class="s">"how"</span><span class="p">,</span> <span class="s">"is"</span><span class="p">,</span> <span class="s">"your"</span><span class="p">,</span> <span class="s">"health"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -5749,7 +6121,8 @@ OR we can explicitly define the return statement.</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Named AND Anonymous (nameless) functions:</strong></p>
 
@@ -5822,9 +6195,12 @@ OR we can explicitly define the return statement.</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Apply-family-functions">Apply family functions<a class="anchor-link" href="#Apply-family-functions"> </a></h3>
+<h3 id="Apply-family-functions">
+<a class="anchor" href="#Apply-family-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Apply family functions<a class="anchor-link" href="#Apply-family-functions"> </a>
+</h3>
 </div>
 </div>
 </div>apply family functions pertains to the R base package and is populated with functions to manipulate slices of data from matrices, arrays, lists and dataframes in a repetitive way. These functions allow crossing the data in a number of ways and avoid explicit use of loop constructs.
@@ -5850,14 +6226,105 @@ OR we can explicitly define the return statement.</p>
 
 <div class="output_html rendered_html output_subarea ">
 <table>
-<thead><tr><th></th><th scope="col">mpg</th><th scope="col">cyl</th><th scope="col">disp</th><th scope="col">hp</th><th scope="col">drat</th><th scope="col">wt</th><th scope="col">qsec</th><th scope="col">vs</th><th scope="col">am</th><th scope="col">gear</th><th scope="col">carb</th></tr></thead>
+<thead><tr>
+<th></th>
+<th scope="col">mpg</th>
+<th scope="col">cyl</th>
+<th scope="col">disp</th>
+<th scope="col">hp</th>
+<th scope="col">drat</th>
+<th scope="col">wt</th>
+<th scope="col">qsec</th>
+<th scope="col">vs</th>
+<th scope="col">am</th>
+<th scope="col">gear</th>
+<th scope="col">carb</th>
+</tr></thead>
 <tbody>
-	<tr><th scope="row">Mazda RX4</th><td>21.0 </td><td>6    </td><td>160  </td><td>110  </td><td>3.90 </td><td>2.620</td><td>16.46</td><td>0    </td><td>1    </td><td>4    </td><td>4    </td></tr>
-	<tr><th scope="row">Mazda RX4 Wag</th><td>21.0 </td><td>6    </td><td>160  </td><td>110  </td><td>3.90 </td><td>2.875</td><td>17.02</td><td>0    </td><td>1    </td><td>4    </td><td>4    </td></tr>
-	<tr><th scope="row">Datsun 710</th><td>22.8 </td><td>4    </td><td>108  </td><td> 93  </td><td>3.85 </td><td>2.320</td><td>18.61</td><td>1    </td><td>1    </td><td>4    </td><td>1    </td></tr>
-	<tr><th scope="row">Hornet 4 Drive</th><td>21.4 </td><td>6    </td><td>258  </td><td>110  </td><td>3.08 </td><td>3.215</td><td>19.44</td><td>1    </td><td>0    </td><td>3    </td><td>1    </td></tr>
-	<tr><th scope="row">Hornet Sportabout</th><td>18.7 </td><td>8    </td><td>360  </td><td>175  </td><td>3.15 </td><td>3.440</td><td>17.02</td><td>0    </td><td>0    </td><td>3    </td><td>2    </td></tr>
-	<tr><th scope="row">Valiant</th><td>18.1 </td><td>6    </td><td>225  </td><td>105  </td><td>2.76 </td><td>3.460</td><td>20.22</td><td>1    </td><td>0    </td><td>3    </td><td>1    </td></tr>
+	<tr>
+<th scope="row">Mazda RX4</th>
+<td>21.0 </td>
+<td>6    </td>
+<td>160  </td>
+<td>110  </td>
+<td>3.90 </td>
+<td>2.620</td>
+<td>16.46</td>
+<td>0    </td>
+<td>1    </td>
+<td>4    </td>
+<td>4    </td>
+</tr>
+	<tr>
+<th scope="row">Mazda RX4 Wag</th>
+<td>21.0 </td>
+<td>6    </td>
+<td>160  </td>
+<td>110  </td>
+<td>3.90 </td>
+<td>2.875</td>
+<td>17.02</td>
+<td>0    </td>
+<td>1    </td>
+<td>4    </td>
+<td>4    </td>
+</tr>
+	<tr>
+<th scope="row">Datsun 710</th>
+<td>22.8 </td>
+<td>4    </td>
+<td>108  </td>
+<td> 93  </td>
+<td>3.85 </td>
+<td>2.320</td>
+<td>18.61</td>
+<td>1    </td>
+<td>1    </td>
+<td>4    </td>
+<td>1    </td>
+</tr>
+	<tr>
+<th scope="row">Hornet 4 Drive</th>
+<td>21.4 </td>
+<td>6    </td>
+<td>258  </td>
+<td>110  </td>
+<td>3.08 </td>
+<td>3.215</td>
+<td>19.44</td>
+<td>1    </td>
+<td>0    </td>
+<td>3    </td>
+<td>1    </td>
+</tr>
+	<tr>
+<th scope="row">Hornet Sportabout</th>
+<td>18.7 </td>
+<td>8    </td>
+<td>360  </td>
+<td>175  </td>
+<td>3.15 </td>
+<td>3.440</td>
+<td>17.02</td>
+<td>0    </td>
+<td>0    </td>
+<td>3    </td>
+<td>2    </td>
+</tr>
+	<tr>
+<th scope="row">Valiant</th>
+<td>18.1 </td>
+<td>6    </td>
+<td>225  </td>
+<td>105  </td>
+<td>2.76 </td>
+<td>3.460</td>
+<td>20.22</td>
+<td>1    </td>
+<td>0    </td>
+<td>3    </td>
+<td>1    </td>
+</tr>
 </tbody>
 </table>
 
@@ -5927,7 +6394,7 @@ OR we can explicitly define the return statement.</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&#39;data.frame&#39;:	32 obs. of  11 variables:
+<pre>'data.frame':	32 obs. of  11 variables:
  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
  $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
  $ disp: num  160 160 108 258 360 ...
@@ -6069,33 +6536,44 @@ OR we can explicitly define the return statement.</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><strong>apply</strong> - apply over the margins of an array (e.g. the rows or columns of a matrix)</li>
-<li><strong>lapply</strong> - apply a function to each element of a list in turn and get a list back.</li>
-<li><strong>sapply</strong> - apply a function to each element of a list and get a simplified object like vector back, rather than a list.</li>
-<li><strong>tapply</strong> - apply a function to subsets of a vector and the subsets are defined by some other vector, usually a factor.</li>
-<li><strong>mapply</strong> - apply a function to the 1st elements of each, and then the 2nd elements of each, etc</li>
+<li>
+<strong>apply</strong> - apply over the margins of an array (e.g. the rows or columns of a matrix)</li>
+<li>
+<strong>lapply</strong> - apply a function to each element of a list in turn and get a list back.</li>
+<li>
+<strong>sapply</strong> - apply a function to each element of a list and get a simplified object like vector back, rather than a list.</li>
+<li>
+<strong>tapply</strong> - apply a function to subsets of a vector and the subsets are defined by some other vector, usually a factor.</li>
+<li>
+<strong>mapply</strong> - apply a function to the 1st elements of each, and then the 2nd elements of each, etc</li>
 </ul>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="/images/copied_from_nb/imgs/VS2Brbn.jpg" alt="Imgur" /></p>
+<p><img src="/images/copied_from_nb/imgs/VS2Brbn.jpg" alt="Imgur"></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="apply">apply<a class="anchor-link" href="#apply"> </a></h4>
+<h4 id="apply">
+<a class="anchor" href="#apply" aria-hidden="true"><span class="octicon octicon-link"></span></a>apply<a class="anchor-link" href="#apply"> </a>
+</h4>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>apply function:</strong></p>
 <ul>
@@ -6276,13 +6754,17 @@ OR we can explicitly define the return statement.</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="lapply">lapply<a class="anchor-link" href="#lapply"> </a></h4>
+<h4 id="lapply">
+<a class="anchor" href="#lapply" aria-hidden="true"><span class="octicon octicon-link"></span></a>lapply<a class="anchor-link" href="#lapply"> </a>
+</h4>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>When you want to apply a function to each element of a list/vector in turn and get a list back</li>
@@ -6419,7 +6901,8 @@ OR we can explicitly define the return statement.</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>convert list to <strong>data frame</strong> and check whether <code>lapply()</code> is working for data frames or not</li>
@@ -6467,14 +6950,49 @@ OR we can explicitly define the return statement.</p>
 
 <div class="output_html rendered_html output_subarea ">
 <table>
-<thead><tr><th scope="col">Diet1</th><th scope="col">Diet2</th><th scope="col">Diet3</th><th scope="col">Diet4</th></tr></thead>
+<thead><tr>
+<th scope="col">Diet1</th>
+<th scope="col">Diet2</th>
+<th scope="col">Diet3</th>
+<th scope="col">Diet4</th>
+</tr></thead>
 <tbody>
-	<tr><td>2</td><td>8</td><td>3</td><td>2</td></tr>
-	<tr><td>5</td><td>5</td><td>4</td><td>2</td></tr>
-	<tr><td>4</td><td>6</td><td>2</td><td>3</td></tr>
-	<tr><td>3</td><td>5</td><td>5</td><td>2</td></tr>
-	<tr><td>5</td><td>7</td><td>2</td><td>5</td></tr>
-	<tr><td>3</td><td>7</td><td>6</td><td>2</td></tr>
+	<tr>
+<td>2</td>
+<td>8</td>
+<td>3</td>
+<td>2</td>
+</tr>
+	<tr>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>2</td>
+</tr>
+	<tr>
+<td>4</td>
+<td>6</td>
+<td>2</td>
+<td>3</td>
+</tr>
+	<tr>
+<td>3</td>
+<td>5</td>
+<td>5</td>
+<td>2</td>
+</tr>
+	<tr>
+<td>5</td>
+<td>7</td>
+<td>2</td>
+<td>5</td>
+</tr>
+	<tr>
+<td>3</td>
+<td>7</td>
+<td>6</td>
+<td>2</td>
+</tr>
 </tbody>
 </table>
 
@@ -6530,10 +7048,12 @@ OR we can explicitly define the return statement.</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>We can apply on <strong>vector</strong> as well using <code>lappply()</code></li>
+<li>We can apply on <strong>vector</strong> as well using <code>lappply()</code>
+</li>
 </ul>
 
 </div>
@@ -6546,7 +7066,7 @@ OR we can explicitly define the return statement.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">Random</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;This&quot;</span><span class="p">,</span> <span class="s">&quot;Is&quot;</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;Random&quot;</span><span class="p">,</span> <span class="s">&quot;Vector&quot;</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">Random</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">"This"</span><span class="p">,</span> <span class="s">"Is"</span><span class="p">,</span> <span class="s">"a"</span><span class="p">,</span> <span class="s">"Random"</span><span class="p">,</span> <span class="s">"Vector"</span><span class="p">)</span>
 <span class="nf">lapply</span><span class="p">(</span><span class="n">Random</span><span class="p">,</span><span class="n">nchar</span><span class="p">)</span> <span class="c1">#To get number of character for each vector element from above object</span>
 </pre></div>
 
@@ -6618,13 +7138,17 @@ OR we can explicitly define the return statement.</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="sapply">sapply<a class="anchor-link" href="#sapply"> </a></h4>
+<h4 id="sapply">
+<a class="anchor" href="#sapply" aria-hidden="true"><span class="octicon octicon-link"></span></a>sapply<a class="anchor-link" href="#sapply"> </a>
+</h4>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>When you want to apply a function to each element of a list in turn, but you want a vector back, rather than a list</li>
@@ -6702,10 +7226,12 @@ OR we can explicitly define the return statement.</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>apply the <code>sapply()</code> function on the <code>CAGO.list</code> and <code>CAGO.df</code></li>
+<li>apply the <code>sapply()</code> function on the <code>CAGO.list</code> and <code>CAGO.df</code>
+</li>
 </ul>
 
 </div>
@@ -6775,13 +7301,17 @@ OR we can explicitly define the return statement.</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="tapply">tapply<a class="anchor-link" href="#tapply"> </a></h4>
+<h4 id="tapply">
+<a class="anchor" href="#tapply" aria-hidden="true"><span class="octicon octicon-link"></span></a>tapply<a class="anchor-link" href="#tapply"> </a>
+</h4>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Applies a function or operation on subset of the vector broken down by a given factor variable.</p>
 <p>To understand clearly lets imagine you have height of 1000 people ( 500 male and 500 females), and you want to know the average height of males and females from this sample data. To deal with this problem you can group height by the gender, height of 500 males, and height of 500 females, and later calculate the average height for males and females.</p>
@@ -6851,14 +7381,56 @@ OR we can explicitly define the return statement.</p>
 
 <div class="output_html rendered_html output_subarea ">
 <table>
-<thead><tr><th scope="col">Sepal.Length</th><th scope="col">Sepal.Width</th><th scope="col">Petal.Length</th><th scope="col">Petal.Width</th><th scope="col">Species</th></tr></thead>
+<thead><tr>
+<th scope="col">Sepal.Length</th>
+<th scope="col">Sepal.Width</th>
+<th scope="col">Petal.Length</th>
+<th scope="col">Petal.Width</th>
+<th scope="col">Species</th>
+</tr></thead>
 <tbody>
-	<tr><td>5.1   </td><td>3.5   </td><td>1.4   </td><td>0.2   </td><td>setosa</td></tr>
-	<tr><td>4.9   </td><td>3.0   </td><td>1.4   </td><td>0.2   </td><td>setosa</td></tr>
-	<tr><td>4.7   </td><td>3.2   </td><td>1.3   </td><td>0.2   </td><td>setosa</td></tr>
-	<tr><td>4.6   </td><td>3.1   </td><td>1.5   </td><td>0.2   </td><td>setosa</td></tr>
-	<tr><td>5.0   </td><td>3.6   </td><td>1.4   </td><td>0.2   </td><td>setosa</td></tr>
-	<tr><td>5.4   </td><td>3.9   </td><td>1.7   </td><td>0.4   </td><td>setosa</td></tr>
+	<tr>
+<td>5.1   </td>
+<td>3.5   </td>
+<td>1.4   </td>
+<td>0.2   </td>
+<td>setosa</td>
+</tr>
+	<tr>
+<td>4.9   </td>
+<td>3.0   </td>
+<td>1.4   </td>
+<td>0.2   </td>
+<td>setosa</td>
+</tr>
+	<tr>
+<td>4.7   </td>
+<td>3.2   </td>
+<td>1.3   </td>
+<td>0.2   </td>
+<td>setosa</td>
+</tr>
+	<tr>
+<td>4.6   </td>
+<td>3.1   </td>
+<td>1.5   </td>
+<td>0.2   </td>
+<td>setosa</td>
+</tr>
+	<tr>
+<td>5.0   </td>
+<td>3.6   </td>
+<td>1.4   </td>
+<td>0.2   </td>
+<td>setosa</td>
+</tr>
+	<tr>
+<td>5.4   </td>
+<td>3.9   </td>
+<td>1.7   </td>
+<td>0.4   </td>
+<td>setosa</td>
+</tr>
 </tbody>
 </table>
 
@@ -6912,17 +7484,21 @@ OR we can explicitly define the return statement.</p>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="mapply">mapply<a class="anchor-link" href="#mapply"> </a></h4>
+<h4 id="mapply">
+<a class="anchor" href="#mapply" aria-hidden="true"><span class="octicon octicon-link"></span></a>mapply<a class="anchor-link" href="#mapply"> </a>
+</h4>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Multivariate version of sapply<br />
-It applies FUN to the first elements of each (…) argument, the second elements, the third elements, and so on.<br />
-Note that the <strong>first argument of mapply() here is the name of a function</strong><br />
+<p>Multivariate version of sapply<br>
+It applies FUN to the first elements of each (…) argument, the second elements, the third elements, and so on.<br>
+Note that the <strong>first argument of mapply() here is the name of a function</strong><br>
 Advisable when you have several data structures (e.g. vectors, lists) and you want to apply a function over elements</p>
 
 </div>
@@ -7131,23 +7707,26 @@ Advisable when you have several data structures (e.g. vectors, lists) and you wa
 <div class="output_html rendered_html output_subarea ">
 <ol>
 	<li>&lt;ol class=list-inline&gt;
-	<li>1</li>
+	</li>
+<li>1</li>
 	<li>1</li>
 	<li>1</li>
 	<li>1</li>
 &lt;/ol&gt;
-</li>
+
 	<li>&lt;ol class=list-inline&gt;
-	<li>2</li>
+	</li>
+<li>2</li>
 	<li>2</li>
 	<li>2</li>
 &lt;/ol&gt;
-</li>
+
 	<li>&lt;ol class=list-inline&gt;
-	<li>3</li>
+	</li>
+<li>3</li>
 	<li>3</li>
 &lt;/ol&gt;
-</li>
+
 	<li>4</li>
 </ol>
 
@@ -7161,57 +7740,66 @@ Advisable when you have several data structures (e.g. vectors, lists) and you wa
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Packages/Modules/Libraries">Packages/Modules/Libraries<a class="anchor-link" href="#Packages/Modules/Libraries"> </a></h2>
+<h2 id="Packages/Modules/Libraries">
+<a class="anchor" href="#Packages/Modules/Libraries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Packages/Modules/Libraries<a class="anchor-link" href="#Packages/Modules/Libraries"> </a>
+</h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>R has many packages prepared and conitniuosly maintaining and upgrading for the specific purpose of activities<br />
-<strong>Eg:</strong><br />
-we can use <code>stringr</code> package used for various string related operations<br />
-we can use <code>dplyr</code> package for data manipulation/cleaning/analysis<br />
-we can use <code>ggplot2</code> package for data visualization<br />
+<p>R has many packages prepared and conitniuosly maintaining and upgrading for the specific purpose of activities<br>
+<strong>Eg:</strong><br>
+we can use <code>stringr</code> package used for various string related operations<br>
+we can use <code>dplyr</code> package for data manipulation/cleaning/analysis<br>
+we can use <code>ggplot2</code> package for data visualization<br>
 ....etc</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To install any package we need internet connectivity for the machine and use <code>install.packages("Package_Name")</code></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Eg:</strong><br />
+<p><strong>Eg:</strong><br>
 <code>install.packages("dplyr")</code></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To load the installed package for the current session we should use <code>library(Package_Name)</code></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Eg:</strong><br />
+<p><strong>Eg:</strong><br>
 <code>library(dplyr)</code></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>List of CRAN Packages By Name:</strong> <a href="https://cran.r-project.org/web/packages/available_packages_by_name.html">https://cran.r-project.org/web/packages/available_packages_by_name.html</a><br />
+<p><strong>List of CRAN Packages By Name:</strong> <a href="https://cran.r-project.org/web/packages/available_packages_by_name.html">https://cran.r-project.org/web/packages/available_packages_by_name.html</a><br>
 <strong>Basic commands for managing R packages:</strong> <a href="https://stats.idre.ucla.edu/r/faq/how-can-i-manage-r-packages/">https://stats.idre.ucla.edu/r/faq/how-can-i-manage-r-packages/</a></p>
 
 </div>
@@ -7221,7 +7809,15 @@ we can use <code>ggplot2</code> package for data visualization<br />
 
 
 
-  </div><a class="u-url" href="/2022/02/20/Notebook.html" hidden></a>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="sumendar/endtoendprojects"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/r/2022/02/20/Notebook.html" hidden></a>
 </article>
 
       </div>
