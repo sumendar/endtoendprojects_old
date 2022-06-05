@@ -7,7 +7,7 @@
 # https://learnxinyminutes.com/docs/yaml/
 
 title: End to End Projects
-description: This blog has been set up for upcoming end-to-end data science and machine learning projects.
+description: This blog has been set up for the upcoming end-to-end data science and machine learning projects.
 github_username: sumendar
 # you can comment the below line out if your repo name is not different than your baseurl
 github_repo: "endtoendprojects"
