@@ -9,7 +9,7 @@ title: An Example Markdown Post
 
 ## Basic setup
 
-Jekyll requires blog post files to be named according to the following format(we can edit in vs code editor):
+Jekyll requires blog post files to be named according to the following format:
 
 `YEAR-MONTH-DAY-filename.md`
 
