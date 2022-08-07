@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Foundational Principles of R Programming | End to End Projects</title>
+<title>Foundational Principles of R Programming (Sample Jupyter Notebook) | End to End Projects</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Foundational Principles of R Programming" />
+<meta property="og:title" content="Foundational Principles of R Programming (Sample Jupyter Notebook)" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A tutorial of Basic R programming." />
 <meta property="og:description" content="A tutorial of Basic R programming." />
@@ -18,9 +18,9 @@
 <meta property="article:published_time" content="2022-02-20T00:00:00-06:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="http://www.endtoendprojects.com/imgs/YQfqXlY.png" />
-<meta property="twitter:title" content="Foundational Principles of R Programming" />
+<meta property="twitter:title" content="Foundational Principles of R Programming (Sample Jupyter Notebook)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-20T00:00:00-06:00","datePublished":"2022-02-20T00:00:00-06:00","description":"A tutorial of Basic R programming.","headline":"Foundational Principles of R Programming","image":"http://www.endtoendprojects.com/imgs/YQfqXlY.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.endtoendprojects.com/r/2022/02/20/Notebook.html"},"url":"http://www.endtoendprojects.com/r/2022/02/20/Notebook.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-20T00:00:00-06:00","datePublished":"2022-02-20T00:00:00-06:00","description":"A tutorial of Basic R programming.","headline":"Foundational Principles of R Programming (Sample Jupyter Notebook)","image":"http://www.endtoendprojects.com/imgs/YQfqXlY.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.endtoendprojects.com/r/2022/02/20/Notebook.html"},"url":"http://www.endtoendprojects.com/r/2022/02/20/Notebook.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://www.endtoendprojects.com/feed.xml" title="End to End Projects" /><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -75,13 +75,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Foundational Principles of R Programming</h1><p class="page-description">A tutorial of Basic R programming.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-02-20T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Foundational Principles of R Programming (Sample Jupyter Notebook)</h1><p class="page-description">A tutorial of Basic R programming.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-02-20T00:00:00-06:00" itemprop="datePublished">
         Feb 20, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      43 min read
+      50 min read
     
 </span></p>
 
@@ -171,9 +171,37 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h3"><a href="#Built-in-functions">Built-in functions </a></li>
 <li class="toc-entry toc-h3"><a href="#User-defined-functions">User defined functions </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#rounding-of-numbers">Rounding of Numbers</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#description">Description</a></li>
+<li class="toc-entry toc-h3"><a href="#usage">Usage</a></li>
+<li class="toc-entry toc-h3"><a href="#arguments">Arguments</a></li>
+<li class="toc-entry toc-h3"><a href="#details">Details</a></li>
+<li class="toc-entry toc-h3"><a href="#s4-methods">S4 methods</a></li>
+<li class="toc-entry toc-h3"><a href="#warning">Warning</a></li>
+<li class="toc-entry toc-h3"><a href="#references">References</a></li>
+<li class="toc-entry toc-h3"><a href="#see-also">See Also</a></li>
+<li class="toc-entry toc-h3"><a href="#examples">Examples</a></li>
 <li class="toc-entry toc-h3"><a href="#Apply-family-functions">Apply family functions </a>
 <ul>
 <li class="toc-entry toc-h4"><a href="#apply">apply </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#apply-functions-over-array-margins">Apply Functions Over Array Margins</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#description-1">Description</a></li>
+<li class="toc-entry toc-h3"><a href="#usage-1">Usage</a></li>
+<li class="toc-entry toc-h3"><a href="#arguments-1">Arguments</a></li>
+<li class="toc-entry toc-h3"><a href="#details-1">Details</a></li>
+<li class="toc-entry toc-h3"><a href="#value">Value</a></li>
+<li class="toc-entry toc-h3"><a href="#references-1">References</a></li>
+<li class="toc-entry toc-h3"><a href="#see-also-1">See Also</a></li>
+<li class="toc-entry toc-h3"><a href="#examples-1">Examples</a>
+<ul>
 <li class="toc-entry toc-h4"><a href="#lapply">lapply </a></li>
 <li class="toc-entry toc-h4"><a href="#sapply">sapply </a></li>
 <li class="toc-entry toc-h4"><a href="#tapply">tapply </a></li>
@@ -645,7 +673,7 @@ Levels: low &lt; medium &lt; high
 
 
 <div class="output_html rendered_html output_subarea ">
-<time datetime="2021-12-05">2021-12-05</time>
+<time datetime="2022-08-07">2022-08-07</time>
 </div>
 
 </div>
@@ -678,7 +706,7 @@ Levels: low &lt; medium &lt; high
 
 
 <div class="output_text output_subarea ">
-<pre>[1] "2021-12-05 09:09:58 IST"</pre>
+<pre>[1] "2022-08-07 10:01:29 IST"</pre>
 </div>
 
 </div>
@@ -901,23 +929,14 @@ In every computer language variables provide a means of accessing the data store
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">Atomic</span> <span class="n">vectors</span> <span class="n">are</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">basic</span> <span class="n">types</span> <span class="n">of</span> <span class="n">objects</span> <span class="n">in</span> <span class="n">R</span> <span class="n">programming.</span> <span class="n">Atomic</span> <span class="n">vectors</span> <span class="n">can</span> <span class="n">store</span> <span class="n">homogeneous</span> <span class="n">data</span> <span class="n">types</span> <span class="n">such</span> <span class="n">as</span> <span class="n">character</span><span class="p">,</span> <span class="n">doubles</span><span class="p">,</span> <span class="n">integers</span><span class="p">,</span> <span class="n">raw</span><span class="p">,</span> <span class="n">logical</span><span class="p">,</span> <span class="n">and</span> <span class="n">complex.</span> <span class="n">A</span> <span class="n">single</span> <span class="n">element</span> <span class="n">variable</span> <span class="n">is</span> <span class="n">also</span> <span class="n">said</span> <span class="n">to</span> <span class="n">be</span> <span class="n">vector.</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Atomic vectors are one of the basic types of objects in R programming. Atomic vectors can store homogeneous data types such as character, doubles, integers, raw, logical, and complex. A single element variable is also said to be vector.</p>
 
 </div>
-    
-
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -996,23 +1015,14 @@ Eg:</p>
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">Positive</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Positive</p>
 
 </div>
-    
-
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1055,23 +1065,14 @@ Eg:</p>
 </div>
     
 
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">Negative</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Negative</p>
 
 </div>
-    
-
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1116,24 +1117,15 @@ Eg:</p>
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">Matrices</span>
-<span class="n">To</span> <span class="n">store</span> <span class="n">values</span> <span class="n">as</span> <span class="m">2</span><span class="o">-</span><span class="n">Dimensional</span> <span class="n">array</span><span class="p">,</span> <span class="n">matrices</span> <span class="n">are</span> <span class="n">used</span> <span class="n">in</span> <span class="n">R.</span> <span class="n">Data</span><span class="p">,</span> <span class="n">number</span> <span class="n">of</span> <span class="n">rows</span> <span class="n">and</span> <span class="n">columns</span> <span class="n">are</span> <span class="n">defined</span> <span class="n">in</span> <span class="n">the</span> <span class="nf">matrix</span><span class="p">()</span> <span class="n">function.</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Matrices
+To store values as 2-Dimensional array, matrices are used in R. Data, number of rows and columns are defined in the matrix() function.</p>
 
 </div>
-    
-
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1365,24 +1357,15 @@ Eg:</p>
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">Arrays</span>
-<span class="nf">array</span><span class="p">()</span> <span class="n">function</span> <span class="n">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">create</span> <span class="n">n</span><span class="o">-</span><span class="n">dimensional</span> <span class="n">array.</span> <span class="n">This</span> <span class="n">function</span> <span class="n">takes</span> <span class="n">dim</span> <span class="n">attribute</span> <span class="n">as</span> <span class="n">an</span> <span class="n">argument</span> <span class="n">and</span> <span class="n">creates</span> <span class="n">required</span> <span class="n">length</span> <span class="n">of</span> <span class="n">each</span> <span class="n">dimension</span> <span class="n">as</span> <span class="n">specified</span> <span class="n">in</span> <span class="n">the</span> <span class="n">attribute.</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Arrays
+array() function is used to create n-dimensional array. This function takes dim attribute as an argument and creates required length of each dimension as specified in the attribute.</p>
 
 </div>
-    
-
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1587,24 +1570,15 @@ Eg:</p>
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">Data</span> <span class="n">Frames</span>
-<span class="n">Data</span> <span class="n">frames</span> <span class="n">are</span> <span class="m">2</span><span class="o">-</span><span class="n">dimensional</span> <span class="n">tabular</span> <span class="n">data</span> <span class="n">object</span> <span class="n">in</span> <span class="n">R</span> <span class="n">programming.</span> <span class="n">Data</span> <span class="n">frames</span> <span class="n">consists</span> <span class="n">of</span> <span class="n">multiple</span> <span class="n">columns</span> <span class="n">and</span> <span class="n">each</span> <span class="n">column</span> <span class="n">represents</span> <span class="n">a</span> <span class="n">vector.</span> <span class="n">Columns</span> <span class="n">in</span> <span class="n">data</span> <span class="n">frame</span> <span class="n">can</span> <span class="n">have</span> <span class="n">different</span> <span class="n">modes</span> <span class="n">of</span> <span class="n">data</span> <span class="n">unlike</span> <span class="n">matrices.</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Data Frames
+Data frames are 2-dimensional tabular data object in R programming. Data frames consists of multiple columns and each column represents a vector. Columns in data frame can have different modes of data unlike matrices.</p>
 
 </div>
-    
-
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1736,12 +1710,10 @@ Eg:</p>
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[1] "data.frame"
-  1 a  b
-1 1 1  1
-2 1 2  4
-3 1 3  9
-4 1 4 16
-5 1 5 25
+  1 x y
+1 1 1 a
+2 1 2 b
+3 1 3 c
 </pre>
 </div>
 </div>
@@ -2069,24 +2041,15 @@ Levels: Ramesh Shekar Tarun
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">Lists</span>
-<span class="n">List</span> <span class="n">is</span> <span class="n">another</span> <span class="n">type</span> <span class="n">of</span> <span class="n">object</span> <span class="n">in</span> <span class="n">R</span> <span class="n">programming.</span> <span class="n">List</span> <span class="n">can</span> <span class="n">contain</span> <span class="n">heterogeneous</span> <span class="n">data</span> <span class="n">types</span> <span class="n">such</span> <span class="n">as</span> <span class="n">vectors</span> <span class="n">or</span> <span class="n">another</span> <span class="n">lists.</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Lists
+List is another type of object in R programming. List can contain heterogeneous data types such as vectors or another lists.</p>
 
 </div>
-    
-
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2219,39 +2182,14 @@ Levels: Ramesh Shekar Tarun
 </div>
     
 
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">lst1</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">*</span><span class="m">2</span><span class="p">)</span> <span class="c1"># we will get error because its not a number, but its still a list</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-Error in lst1[1] * 2: non-numeric argument to binary operator
-Traceback:
-</pre>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>print(lst1[1]*2)</code> # we will get error because its not a number, but its still a list</p>
 
 </div>
 </div>
-
 </div>
-    
-
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -3481,25 +3419,16 @@ Miscellaneous Operators <code>(:  %in%  %*%)</code></p>
 </div>
     
 
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">It</span><span class="s">'s the '</span><span class="n">superassignment</span><span class="s">'</span><span class="err"> operator.  It does the assignment in the</span>
-<span class="n">enclosing</span> <span class="n">environment.</span> <span class="n">That</span> <span class="n">is</span><span class="p">,</span> <span class="n">starting</span> <span class="n">with</span> <span class="n">the</span> <span class="n">enclosing</span> <span class="n">frame</span><span class="p">,</span> <span class="n">it</span>
-<span class="n">works</span> <span class="n">its</span> <span class="n">way</span> <span class="n">up</span> <span class="n">towards</span> <span class="n">the</span> <span class="n">global</span> <span class="n">environment</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It's the 'superassignment' operator.  It does the assignment in the
+enclosing environment. That is, starting with the enclosing frame, it
+works its way up towards the global environment</p>
 
 </div>
-    
-
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -3550,32 +3479,24 @@ Miscellaneous Operators <code>(:  %in%  %*%)</code></p>
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">Arithmetic</span> <span class="n">Operators</span>
-
-<span class="n">Operator</span>    <span class="n">Description</span>       <span class="n">Example</span>
-<span class="o">-</span>           <span class="n">Subtraction</span>       <span class="m">5</span> <span class="o">-</span> <span class="m">1</span> <span class="o">=</span> <span class="m">4</span>
-<span class="o">+</span>           <span class="n">Addition</span>          <span class="m">5</span> <span class="o">+</span> <span class="m">1</span> <span class="o">=</span> <span class="m">6</span>
-<span class="o">*</span>           <span class="n">Multiplication</span>    <span class="m">5</span> <span class="o">*</span> <span class="m">3</span> <span class="o">=</span> <span class="m">15</span>
-<span class="o">/</span>           <span class="n">Division</span>          <span class="m">10</span> <span class="o">/</span> <span class="m">2</span> <span class="o">=</span> <span class="m">5</span>
-<span class="o">^</span> <span class="n">or</span> <span class="o">**</span>     <span class="n">Exponentiation</span>    <span class="m">2</span><span class="o">*</span><span class="m">2</span><span class="o">*</span><span class="m">2</span><span class="o">*</span><span class="m">2</span><span class="o">*</span><span class="m">2</span> <span class="n">as</span> <span class="m">2</span> <span class="n">to</span> <span class="n">the</span> <span class="n">power</span> <span class="n">of</span> <span class="m">5</span>
-<span class="n">x</span><span class="o">%%</span><span class="n">y</span>        <span class="n">Modulus</span>           <span class="m">5</span><span class="o">%%</span><span class="m">2</span> <span class="n">is</span> <span class="m">1</span>
-<span class="n">x</span><span class="o">%/%</span><span class="n">y</span>       <span class="n">Integer</span> <span class="n">Division</span>  <span class="m">5</span><span class="o">%/%</span><span class="m">2</span> <span class="n">is</span> <span class="m">2</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Arithmetic Operators</p>
+<p>Operator    Description       Example</p>
+<ul>
+<li>Subtraction       5 - 1 = 4</li>
+<li>Addition          5 + 1 = 6</li>
+<li>Multiplication    5 <em> 3 = 15
+/           Division          10 / 2 = 5
+^ or **     Exponentiation    2</em>2<em>2</em>2*2 as 2 to the power of 5
+x%%y        Modulus           5%%2 is 1
+x%/%y       Integer Division  5%/%2 is 2</li>
+</ul>
 
 </div>
-    
-
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -3639,29 +3560,23 @@ Miscellaneous Operators <code>(:  %in%  %*%)</code></p>
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">Operator</span>     <span class="n">Description</span>                 <span class="n">Example</span>
-<span class="o">&lt;</span>            <span class="n">less</span> <span class="n">than</span>                   <span class="m">5</span> <span class="o">&lt;</span> <span class="m">10</span>
-<span class="o">&lt;=</span>           <span class="n">less</span> <span class="n">than</span> <span class="n">or</span> <span class="n">equal</span> <span class="n">to</span>       <span class="o">&lt;=</span> <span class="m">5</span>
-<span class="o">&gt;</span>            <span class="n">greater</span> <span class="n">than</span>                <span class="m">10</span> <span class="o">&gt;</span> <span class="m">5</span>
-<span class="o">&gt;=</span>           <span class="n">greater</span> <span class="n">than</span> <span class="n">or</span> <span class="n">equal</span> <span class="n">to</span>    <span class="o">&gt;=</span> <span class="m">10</span>
-<span class="o">==</span>           <span class="n">exactly</span> <span class="n">equal</span> <span class="n">to</span>            <span class="o">==</span> <span class="m">10</span>
-<span class="o">!=</span>           <span class="n">not</span> <span class="n">equal</span> <span class="n">to</span>                <span class="o">!=</span> <span class="m">5</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Operator     Description                 Example
+&lt;            less than                   5 &lt; 10
+&lt;=           less than or equal to       &lt;= 5</p>
+<blockquote>
+<pre><code>       greater than                10 &gt; 5
+</code></pre>
+<p>=           greater than or equal to    &gt;= 10
+==           exactly equal to            == 10
+!=           not equal to                != 5</p>
+</blockquote>
 
 </div>
-    
-
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -3714,26 +3629,17 @@ Miscellaneous Operators <code>(:  %in%  %*%)</code></p>
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">Operator</span>     <span class="n">Description</span>                 <span class="n">Example</span>
-<span class="o">!</span><span class="n">x</span>           <span class="n">not</span> <span class="n">x</span>                       <span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">),</span> <span class="o">!</span><span class="n">x</span>
-<span class="n">x</span> <span class="o">|</span> <span class="n">y</span>        <span class="n">x</span> <span class="n">or</span> <span class="n">y</span>                      <span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">),</span> <span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">),</span> <span class="n">x</span> <span class="o">|</span> <span class="n">y</span>
-<span class="n">x</span> <span class="o">&amp;</span> <span class="n">y</span>        <span class="n">x</span> <span class="n">and</span> <span class="n">y</span>                     <span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">),</span> <span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">),</span> <span class="n">x</span> <span class="o">&amp;</span> <span class="n">y</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Operator     Description                 Example
+!x           not x                       x &lt;- c(5), !x
+x | y        x or y                      x &lt;- c(5), y &lt;- c(10), x | y
+x &amp; y        x and y                     x &lt;- c(5), y &lt;- c(10), x &amp; y</p>
 
 </div>
-    
-
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -4174,26 +4080,19 @@ Miscellaneous Operators <code>(:  %in%  %*%)</code></p>
 </div>
     
 
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="kc">NULL</span>
-<span class="o">*</span> <span class="n">The</span> <span class="n">class</span> <span class="n">of</span> <span class="kc">NULL</span> <span class="n">is</span> <span class="n">null</span> <span class="n">and</span> <span class="n">has</span> <span class="n">length</span> <span class="m">0</span>
-<span class="o">*</span> <span class="n">Does</span> <span class="n">not</span> <span class="n">take</span> <span class="n">up</span> <span class="n">any</span> <span class="n">space</span> <span class="n">in</span> <span class="n">a</span> <span class="n">vector</span>
-<span class="o">*</span> <span class="n">The</span> <span class="n">function</span> <span class="n">`is.null()`</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">detect</span> <span class="kc">NULL</span> <span class="n">variables.</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>NULL</p>
+<ul>
+<li>The class of NULL is null and has length 0</li>
+<li>Does not take up any space in a vector</li>
+<li>The function <code>is.null()</code> can be used to detect NULL variables.</li>
+</ul>
 
 </div>
-    
-
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -4231,25 +4130,18 @@ Miscellaneous Operators <code>(:  %in%  %*%)</code></p>
 </div>
     
 
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="kc">Inf</span>
-<span class="o">*</span> <span class="kc">Inf</span> <span class="n">is</span> <span class="n">a</span> <span class="n">valid</span> <span class="n">`numeric`</span> <span class="n">that</span> <span class="n">results</span> <span class="n">from</span> <span class="n">calculations</span> <span class="n">like</span> <span class="n">division</span> <span class="n">of</span> <span class="n">a</span> <span class="n">number</span> <span class="n">by</span> <span class="n">zero.</span>
-<span class="o">*</span> <span class="n">Since</span> <span class="kc">Inf</span> <span class="n">is</span> <span class="n">a</span> <span class="n">numeric</span><span class="p">,</span> <span class="n">operations</span> <span class="n">between</span> <span class="kc">Inf</span> <span class="n">and</span> <span class="n">a</span> <span class="n">finite</span> <span class="n">numeric</span> <span class="n">are</span> <span class="n">well</span><span class="o">-</span><span class="n">defined</span> <span class="n">and</span> <span class="n">comparison</span> <span class="n">operators</span> <span class="n">work</span> <span class="n">as</span> <span class="n">expected.</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Inf</p>
+<ul>
+<li>Inf is a valid <code>numeric</code> that results from calculations like division of a number by zero.</li>
+<li>Since Inf is a numeric, operations between Inf and a finite numeric are well-defined and comparison operators work as expected.</li>
+</ul>
 
 </div>
-    
-
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -4306,27 +4198,20 @@ FALSE
 </div>
     
 
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="kc">NaN</span>
-<span class="o">*</span> <span class="n">Stands</span> <span class="n">for</span> <span class="n">not</span> <span class="n">a</span> <span class="n">number.</span> 
-<span class="o">*</span> <span class="n">unknown</span> <span class="n">resulsts</span><span class="p">,</span> <span class="n">but</span> <span class="n">it</span> <span class="n">is</span> <span class="n">surely</span> <span class="n">not</span> <span class="n">a</span> <span class="n">number</span>
-<span class="o">*</span> <span class="n">e.g</span> <span class="n">like</span> <span class="n">`0/0, Inf-Inf`</span> <span class="n">and</span> <span class="n">`Inf/Inf`</span> <span class="n">result</span> <span class="n">in</span> <span class="kc">NaN</span>
-<span class="o">*</span>  <span class="n">Computations</span> <span class="n">involving</span> <span class="n">numbers</span> <span class="n">and</span> <span class="kc">NaN</span> <span class="n">always</span> <span class="n">result</span> <span class="n">in</span> <span class="kc">NaN</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>NaN</p>
+<ul>
+<li>Stands for not a number. </li>
+<li>unknown resulsts, but it is surely not a number</li>
+<li>e.g like <code>0/0, Inf-Inf</code> and <code>Inf/Inf</code> result in NaN</li>
+<li>Computations involving numbers and NaN always result in NaN</li>
+</ul>
 
 </div>
-    
-
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -4385,42 +4270,24 @@ NaN
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">Internal </span><span class="p">(</span><span class="n">implicit</span><span class="p">)</span> <span class="n">coercion</span>
-<span class="n">External</span> <span class="n">coercion</span> <span class="n">and</span> <span class="n">testing</span> <span class="n">objects</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Internal (implicit) coercion
+External coercion and testing objects</p>
 
 </div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">Internal </span><span class="p">(</span><span class="n">implicit</span><span class="p">)</span> <span class="n">coercion</span><span class="o">:</span>  
-<span class="n">If</span> <span class="n">the</span> <span class="n">two</span> <span class="n">arguments</span> <span class="n">are</span> <span class="n">atomic</span> <span class="n">vectors</span> <span class="n">of</span> <span class="n">different</span> <span class="n">modes</span><span class="p">,</span> <span class="n">one</span> <span class="n">is</span> <span class="n">coerced</span> <span class="n">to</span> <span class="n">the</span> <span class="n">type</span> <span class="n">of</span> <span class="n">the</span> <span class="n">other</span><span class="p">,</span> <span class="nf">the </span><span class="p">(</span><span class="n">decreasing</span><span class="p">)</span> <span class="n">order</span> <span class="n">of</span> <span class="n">precedence</span> <span class="n">being</span> <span class="n">character</span><span class="p">,</span> <span class="n">complex</span><span class="p">,</span> <span class="n">numeric</span><span class="p">,</span> <span class="n">integer</span><span class="p">,</span> <span class="n">logical</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Internal (implicit) coercion:<br>
+If the two arguments are atomic vectors of different modes, one is coerced to the type of the other, the (decreasing) order of precedence being character, complex, numeric, integer, logical</p>
 
 </div>
-    
-
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -4558,23 +4425,14 @@ Use <code>is.atomic()</code> to test if an object is either atomic vector or <co
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">IF</span> <span class="n">statement</span> <span class="n">associates</span> <span class="n">a</span> <span class="n">condition</span> <span class="n">with</span> <span class="n">a</span> <span class="n">sequence</span> <span class="n">of</span> <span class="n">statements</span><span class="p">,</span> <span class="n">The</span> <span class="n">sequence</span> <span class="n">of</span> <span class="n">statements</span> <span class="n">is</span> <span class="n">executed</span> <span class="n">only</span> <span class="n">if</span> <span class="n">the</span> <span class="n">condition</span> <span class="n">is</span> <span class="n">true.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">condition</span> <span class="n">is</span> <span class="n">false</span> <span class="n">or</span> <span class="n">null</span><span class="p">,</span> <span class="n">the</span> <span class="n">IF</span> <span class="n">statement</span> <span class="n">does</span> <span class="n">nothing.</span> <span class="n">In</span> <span class="n">either</span> <span class="n">case</span><span class="p">,</span> <span class="n">control</span> <span class="n">passes</span> <span class="n">to</span> <span class="n">the</span> <span class="n">next</span> <span class="n">statement</span><span class="o">**</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>IF statement associates a condition with a sequence of statements, The sequence of statements is executed only if the condition is true. If the condition is false or null, the IF statement does nothing. In either case, control passes to the next statement**</p>
 
 </div>
-    
-
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -5253,17 +5111,13 @@ switch statement allows a variable to be tested for equality against a list of v
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">number1</span> <span class="o">&lt;-</span> <span class="m">30</span>
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">number1</span> <span class="o">&lt;-</span> <span class="m">30</span>
 <span class="n">number2</span> <span class="o">&lt;-</span> <span class="m">20</span>
 <span class="n">operator</span> <span class="o">&lt;-</span> <span class="nf">readline</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="s">"Please enter any ARITHMETIC OPERATOR You wish!: "</span><span class="p">)</span>
- 
+
 <span class="nf">switch</span><span class="p">(</span><span class="n">operator</span><span class="p">,</span>
        <span class="s">"+"</span> <span class="o">=</span> <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">"Addition of two numbers is: "</span><span class="p">,</span> <span class="n">number1</span> <span class="o">+</span> <span class="n">number2</span><span class="p">)),</span>
        <span class="s">"-"</span> <span class="o">=</span> <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">"Subtraction of two numbers is: "</span><span class="p">,</span> <span class="n">number1</span> <span class="o">-</span> <span class="n">number2</span><span class="p">)),</span>
@@ -5275,28 +5129,9 @@ switch statement allows a variable to be tested for equality against a list of v
 <span class="p">)</span>
 </pre></div>
 
-    </div>
 </div>
 </div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Please enter any ARITHMETIC OPERATOR You wish!: *
-[1] "Multiplication of two numbers is:  600"
-</pre>
 </div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -5306,23 +5141,14 @@ switch statement allows a variable to be tested for equality against a list of v
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">Vectorization</span> <span class="n">concept</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Vectorization concept</p>
 
 </div>
-    
-
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -5362,23 +5188,14 @@ switch statement allows a variable to be tested for equality against a list of v
 </div>
     
 
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">recycling</span> <span class="n">concept</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>recycling concept</p>
 
 </div>
-    
-
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -6036,6 +5853,190 @@ function_name &lt;–function(arg_1, arg_2, …)
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+
+<table width="100%" summary="page for Round {base}"><tr>
+<td>Round {base}</td>
+<td style="text-align: right;">R Documentation</td>
+</tr></table>
+
+<h2>
+<a class="anchor" href="#rounding-of-numbers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rounding of Numbers</h2>
+
+<h3>
+<a class="anchor" href="#description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h3>
+
+<p><code>ceiling</code> takes a single numeric argument <code>x</code> and returns a
+numeric vector containing the smallest integers not less than the
+corresponding elements of <code>x</code>.
+</p>
+<p><code>floor</code> takes a single numeric argument <code>x</code> and returns a
+numeric vector containing the largest integers not greater than the
+corresponding elements of <code>x</code>.
+</p>
+<p><code>trunc</code> takes a single numeric argument <code>x</code> and returns a
+numeric vector containing the integers formed by truncating the values in
+<code>x</code> toward <code>0</code>.
+</p>
+<p><code>round</code> rounds the values in its first argument to the specified
+number of decimal places (default 0).  See ‘Details’ about
+“round to even” when rounding off a 5.
+</p>
+<p><code>signif</code> rounds the values in its first argument to the specified
+number of significant digits.
+</p>
+
+
+<h3>
+<a class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+<pre>
+ceiling(x)
+floor(x)
+trunc(x, ...)
+
+round(x, digits = 0)
+signif(x, digits = 6)
+</pre>
+
+
+<h3>
+<a class="anchor" href="#arguments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top">
+<td><code>x</code></td>
+<td>
+<p>a numeric vector.  Or, for <code>round</code> and <code>signif</code>, a
+complex vector.</p>
+</td>
+</tr>
+<tr valign="top">
+<td><code>digits</code></td>
+<td>
+<p>integer indicating the number of decimal places
+(<code>round</code>) or significant digits (<code>signif</code>) to be used.
+Negative values are allowed (see ‘Details’).</p>
+</td>
+</tr>
+<tr valign="top">
+<td><code>...</code></td>
+<td>
+<p>arguments to be passed to methods.</p>
+</td>
+</tr>
+</table>
+
+
+<h3>
+<a class="anchor" href="#details" aria-hidden="true"><span class="octicon octicon-link"></span></a>Details</h3>
+
+<p>These are generic functions: methods can be defined for them
+individually or via the <code>Math</code> group
+generic.
+</p>
+<p>Note that for rounding off a 5, the IEC 60559 standard (see also
+‘IEEE 754’) is expected to be used, ‘<em>go to the even digit</em>’.
+Therefore <code>round(0.5)</code> is <code>0</code> and <code>round(-1.5)</code> is
+<code>-2</code>.  However, this is dependent on OS services and on
+representation error (since e.g. <code>0.15</code> is not represented
+exactly, the rounding rule applies to the represented number and not
+to the printed number, and so <code>round(0.15, 1)</code> could be either
+<code>0.1</code> or <code>0.2</code>).
+</p>
+<p>Rounding to a negative number of digits means rounding to a power of
+ten, so for example <code>round(x, digits = -2)</code> rounds to the nearest
+hundred.
+</p>
+<p>For <code>signif</code> the recognized values of <code>digits</code> are
+<code>1...22</code>, and non-missing values are rounded to the nearest
+integer in that range.  Complex numbers are rounded to retain the
+specified number of digits in the larger of the components.  Each
+element of the vector is rounded individually, unlike printing.
+</p>
+<p>These are all primitive functions.
+</p>
+
+
+<h3>
+<a class="anchor" href="#s4-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>S4 methods</h3>
+
+<p>These are all (internally) S4 generic.
+</p>
+<p><code>ceiling</code>, <code>floor</code> and <code>trunc</code> are members of the
+<code>Math</code> group generic.  As an S4
+generic, <code>trunc</code> has only one argument.
+</p>
+<p><code>round</code> and <code>signif</code> are members of the
+<code>Math2</code> group generic.
+</p>
+
+
+<h3>
+<a class="anchor" href="#warning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Warning</h3>
+
+<p>The realities of computer arithmetic can cause unexpected results,
+especially with <code>floor</code> and <code>ceiling</code>.  For example, we
+‘know’ that <code>floor(log(x, base = 8))</code> for <code>x = 8</code> is
+<code>1</code>, but <code>0</code> has been seen on an <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> platform.  It is
+normally necessary to use a tolerance.
+</p>
+
+
+<h3>
+<a class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h3>
+
+<p>Becker, R. A., Chambers, J. M. and Wilks, A. R. (1988)
+<em>The New S Language</em>.  Wadsworth &amp; Brooks/Cole.
+</p>
+<p>The ISO/IEC/IEEE 60559:2011 standard is available for money from
+<a href="https://www.iso.org">https://www.iso.org</a>.
+</p>
+<p>The IEEE 745:2008 standard is more openly documented, e.g, at
+<a href="https://en.wikipedia.org/wiki/IEEE_754">https://en.wikipedia.org/wiki/IEEE_754</a>.
+</p>
+
+
+<h3>
+<a class="anchor" href="#see-also" aria-hidden="true"><span class="octicon octicon-link"></span></a>See Also</h3>
+
+<p><code>as.integer</code>.
+</p>
+
+
+<h3>
+<a class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h3>
+
+<pre>
+round(.5 + -2:4) # IEEE / IEC rounding: -2  0  0  2  2  4  4
+## (this is *good* behaviour -- do *NOT* report it as bug !)
+
+( x1 &lt;- seq(-2, 4, by = .5) )
+round(x1) #-- IEEE / IEC rounding !
+x1[trunc(x1) != floor(x1)]
+x1[round(x1) != floor(x1 + .5)]
+(non.int &lt;- ceiling(x1) != floor(x1))
+
+x2 &lt;- pi * 100^(-1:3)
+round(x2, 3)
+signif(x2, 3)
+</pre>
+
+<hr>
+<div style="text-align: center;">[Package <em>base</em> version 3.6.1 ]</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -6093,39 +6094,14 @@ function_name &lt;–function(arg_1, arg_2, …)
 </div>
     
 
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">testFun</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-Error in testFun(ax = 2, ax = 3): formal argument "axb" matched by multiple actual arguments
-Traceback:
-</pre>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>testFun(ax=2,ax=3)</code></p>
 
 </div>
 </div>
-
 </div>
-    
-
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -6548,23 +6524,14 @@ OR we can explicitly define the return statement.</p>
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">apply</span> <span class="n">family</span> <span class="n">functions</span> <span class="n">pertains</span> <span class="n">to</span> <span class="n">the</span> <span class="n">R</span> <span class="n">base</span> <span class="n">package</span> <span class="n">and</span> <span class="n">is</span> <span class="n">populated</span> <span class="n">with</span> <span class="n">functions</span> <span class="n">to</span> <span class="n">manipulate</span> <span class="n">slices</span> <span class="n">of</span> <span class="n">data</span> <span class="n">from</span> <span class="n">matrices</span><span class="p">,</span> <span class="n">arrays</span><span class="p">,</span> <span class="n">lists</span> <span class="n">and</span> <span class="n">dataframes</span> <span class="n">in</span> <span class="n">a</span> <span class="n">repetitive</span> <span class="n">way.</span> <span class="n">These</span> <span class="n">functions</span> <span class="n">allow</span> <span class="n">crossing</span> <span class="n">the</span> <span class="n">data</span> <span class="n">in</span> <span class="n">a</span> <span class="n">number</span> <span class="n">of</span> <span class="n">ways</span> <span class="n">and</span> <span class="n">avoid</span> <span class="n">explicit</span> <span class="n">use</span> <span class="n">of</span> <span class="n">loop</span> <span class="n">constructs.</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>apply family functions pertains to the R base package and is populated with functions to manipulate slices of data from matrices, arrays, lists and dataframes in a repetitive way. These functions allow crossing the data in a number of ways and avoid explicit use of loop constructs.</p>
 
 </div>
-    
-
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -6955,6 +6922,193 @@ OR we can explicitly define the return statement.</p>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+
+<table width="100%" summary="page for apply {base}"><tr>
+<td>apply {base}</td>
+<td style="text-align: right;">R Documentation</td>
+</tr></table>
+
+<h2>
+<a class="anchor" href="#apply-functions-over-array-margins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Apply Functions Over Array Margins</h2>
+
+<h3>
+<a class="anchor" href="#description-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h3>
+
+<p>Returns a vector or array or list of values obtained by applying a
+function to margins of an array or matrix.
+</p>
+
+
+<h3>
+<a class="anchor" href="#usage-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+<pre>
+apply(X, MARGIN, FUN, ...)
+</pre>
+
+
+<h3>
+<a class="anchor" href="#arguments-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top">
+<td><code>X</code></td>
+<td>
+<p>an array, including a matrix.</p>
+</td>
+</tr>
+<tr valign="top">
+<td><code>MARGIN</code></td>
+<td>
+<p>a vector giving the subscripts which the function will
+be applied over.  E.g., for a matrix <code>1</code> indicates rows,
+<code>2</code> indicates columns, <code>c(1, 2)</code> indicates rows and
+columns. Where <code>X</code> has named dimnames, it can be a character
+vector selecting dimension names.</p>
+</td>
+</tr>
+<tr valign="top">
+<td><code>FUN</code></td>
+<td>
+<p>the function to be applied: see ‘Details’.
+In the case of functions like <code>+</code>, <code>%*%</code>, etc., the
+function name must be backquoted or quoted.</p>
+</td>
+</tr>
+<tr valign="top">
+<td><code>...</code></td>
+<td>
+<p>optional arguments to <code>FUN</code>.</p>
+</td>
+</tr>
+</table>
+
+
+<h3>
+<a class="anchor" href="#details-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Details</h3>
+
+<p>If <code>X</code> is not an array but an object of a class with a non-null
+<code>dim</code> value (such as a data frame), <code>apply</code> attempts
+to coerce it to an array via <code>as.matrix</code> if it is two-dimensional
+(e.g., a data frame) or via <code>as.array</code>.
+</p>
+<p><code>FUN</code> is found by a call to <code>match.fun</code> and typically
+is either a function or a symbol (e.g., a backquoted name) or a
+character string specifying a function to be searched for from the
+environment of the call to <code>apply</code>.
+</p>
+<p>Arguments in <code>...</code> cannot have the same name as any of the
+other arguments, and care may be needed to avoid partial matching to
+<code>MARGIN</code> or <code>FUN</code>.  In general-purpose code it is good
+practice to name the first three arguments if <code>...</code> is passed
+through: this both avoids partial matching to <code>MARGIN</code>
+or <code>FUN</code> and ensures that a sensible error message is given if
+arguments named <code>X</code>, <code>MARGIN</code> or <code>FUN</code> are passed
+through <code>...</code>.
+</p>
+
+
+<h3>
+<a class="anchor" href="#value" aria-hidden="true"><span class="octicon octicon-link"></span></a>Value</h3>
+
+<p>If each call to <code>FUN</code> returns a vector of length <code>n</code>, then
+<code>apply</code> returns an array of dimension <code>c(n, dim(X)[MARGIN])</code>
+if <code>n &gt; 1</code>.  If <code>n</code> equals <code>1</code>, <code>apply</code> returns a
+vector if <code>MARGIN</code> has length 1 and an array of dimension
+<code>dim(X)[MARGIN]</code> otherwise.
+If <code>n</code> is <code>0</code>, the result has length 0 but not necessarily
+the ‘correct’ dimension.
+</p>
+<p>If the calls to <code>FUN</code> return vectors of different lengths,
+<code>apply</code> returns a list of length <code>prod(dim(X)[MARGIN])</code> with
+<code>dim</code> set to <code>MARGIN</code> if this has length greater than one.
+</p>
+<p>In all cases the result is coerced by <code>as.vector</code> to one
+of the basic vector types before the dimensions are set, so that (for
+example) factor results will be coerced to a character array.
+</p>
+
+
+<h3>
+<a class="anchor" href="#references-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h3>
+
+<p>Becker, R. A., Chambers, J. M. and Wilks, A. R. (1988)
+<em>The New S Language</em>.
+Wadsworth &amp; Brooks/Cole.
+</p>
+
+
+<h3>
+<a class="anchor" href="#see-also-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>See Also</h3>
+
+<p><code>lapply</code> and there, <code>simplify2array</code>;
+<code>tapply</code>, and convenience functions
+<code>sweep</code> and <code>aggregate</code>.
+</p>
+
+
+<h3>
+<a class="anchor" href="#examples-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h3>
+
+<pre>
+## Compute row and column sums for a matrix:
+x &lt;- cbind(x1 = 3, x2 = c(4:1, 2:5))
+dimnames(x)[[1]] &lt;- letters[1:8]
+apply(x, 2, mean, trim = .2)
+col.sums &lt;- apply(x, 2, sum)
+row.sums &lt;- apply(x, 1, sum)
+rbind(cbind(x, Rtot = row.sums), Ctot = c(col.sums, sum(col.sums)))
+
+stopifnot( apply(x, 2, is.vector))
+
+## Sort the columns of a matrix
+apply(x, 2, sort)
+
+## keeping named dimnames
+names(dimnames(x)) &lt;- c("row", "col")
+x3 &lt;- array(x, dim = c(dim(x),3),
+	    dimnames = c(dimnames(x), list(C = paste0("cop.",1:3))))
+identical(x,  apply( x,  2,  identity))
+identical(x3, apply(x3, 2:3, identity))
+
+##- function with extra args:
+cave &lt;- function(x, c1, c2) c(mean(x[c1]), mean(x[c2]))
+apply(x, 1, cave,  c1 = "x1", c2 = c("x1","x2"))
+
+ma &lt;- matrix(c(1:4, 1, 6:8), nrow = 2)
+ma
+apply(ma, 1, table)  #--&gt; a list of length 2
+apply(ma, 1, stats::quantile) # 5 x n matrix with rownames
+
+stopifnot(dim(ma) == dim(apply(ma, 1:2, sum)))
+
+## Example with different lengths for each call
+z &lt;- array(1:24, dim = 2:4)
+zseq &lt;- apply(z, 1:2, function(x) seq_len(max(x)))
+zseq         ## a 2 x 3 matrix
+typeof(zseq) ## list
+dim(zseq) ## 2 3
+zseq[1,]
+apply(z, 3, function(x) seq_len(max(x)))
+# a list without a dim attribute
+</pre>
+
+<hr>
+<div style="text-align: center;">[Package <em>base</em> version 3.6.1 ]</div>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -8126,7 +8280,7 @@ we can use <code>ggplot2</code> package for data visualization<br>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To install any package we need internet connectivity for the machine and use <code>install.packages("Package_Name")</code></p>
+<p>To install any package we need internet connectivity for the machine and use <code>install.packages("package name")</code></p>
 
 </div>
 </div>
@@ -8135,7 +8289,7 @@ we can use <code>ggplot2</code> package for data visualization<br>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Eg:</strong><br>
-<code>install.packages("dplyr")</code></p>
+<code>install.packages("stringr")</code></p>
 
 </div>
 </div>
@@ -8152,7 +8306,7 @@ we can use <code>ggplot2</code> package for data visualization<br>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Eg:</strong><br>
-<code>library(dplyr)</code></p>
+<code>library(stringr)</code></p>
 
 </div>
 </div>
