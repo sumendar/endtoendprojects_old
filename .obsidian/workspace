@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "8d3b551f34d93214",
+        "id": "366c01b86a594828",
         "type": "leaf",
         "state": {
           "type": "empty",
@@ -82,6 +82,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "8d3b551f34d93214",
-  "lastOpenFiles": []
+  "active": "366c01b86a594828",
+  "lastOpenFiles": [
+    "_word/README.md",
+    "_posts/2020-01-14-test-markdown-post.md"
+  ]
 }
