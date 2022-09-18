@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
+This website is authored by **[Sumendar](https://www.sumendar.com/){:target="\_blank"}** [^1].
 
 
 
