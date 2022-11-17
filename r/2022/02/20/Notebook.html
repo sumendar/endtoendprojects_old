@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Foundational Principles of R Programming (Sample Notebook for preview)" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A tutorial of Basics R programming." />
-<meta property="og:description" content="A tutorial of Basics R programming." />
+<meta name="description" content="A tutorial of Basics R-programming." />
+<meta property="og:description" content="A tutorial of Basics R-programming." />
 <link rel="canonical" href="http://www.endtoendprojects.com/r/2022/02/20/Notebook.html" />
 <meta property="og:url" content="http://www.endtoendprojects.com/r/2022/02/20/Notebook.html" />
 <meta property="og:site_name" content="End to End Projects" />
@@ -20,7 +20,7 @@
 <meta property="twitter:image" content="http://www.endtoendprojects.com/imgs/YQfqXlY.png" />
 <meta property="twitter:title" content="Foundational Principles of R Programming (Sample Notebook for preview)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-20T00:00:00-06:00","datePublished":"2022-02-20T00:00:00-06:00","description":"A tutorial of Basics R programming.","headline":"Foundational Principles of R Programming (Sample Notebook for preview)","image":"http://www.endtoendprojects.com/imgs/YQfqXlY.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.endtoendprojects.com/r/2022/02/20/Notebook.html"},"url":"http://www.endtoendprojects.com/r/2022/02/20/Notebook.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-20T00:00:00-06:00","datePublished":"2022-02-20T00:00:00-06:00","description":"A tutorial of Basics R-programming.","headline":"Foundational Principles of R Programming (Sample Notebook for preview)","image":"http://www.endtoendprojects.com/imgs/YQfqXlY.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.endtoendprojects.com/r/2022/02/20/Notebook.html"},"url":"http://www.endtoendprojects.com/r/2022/02/20/Notebook.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://www.endtoendprojects.com/feed.xml" title="End to End Projects" /><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -75,7 +75,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Foundational Principles of R Programming (Sample Notebook for preview)</h1><p class="page-description">A tutorial of Basics R programming.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-02-20T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Foundational Principles of R Programming (Sample Notebook for preview)</h1><p class="page-description">A tutorial of Basics R-programming.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-02-20T00:00:00-06:00" itemprop="datePublished">
         Feb 20, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -255,15 +255,15 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">i1</span> <span class="o">=</span> <span class="m">10</span>
 <span class="n">i2</span><span class="o">=</span> <span class="m">2.34</span>
-<span class="n">i3</span> <span class="o">=</span> <span class="m">3+6i</span>
-<span class="n">i4</span>  <span class="o">=</span>  <span class="m">5L</span>
-<span class="n">i5</span> <span class="o">=</span> <span class="m">-90</span>
-<span class="n">i6</span> <span class="o">=</span> <span class="m">5</span><span class="o">/</span><span class="m">2</span>         <span class="c1"># Here, L tells R to store the value as an integer,</span>
+<span class="n">i3</span>  <span class="o">=</span> <span class="m">5</span><span class="o">/</span><span class="m">2</span>
+<span class="n">i4</span> <span class="o">=</span> <span class="m">-90</span>
+<span class="n">i5</span> <span class="o">=</span> <span class="m">5L</span>          <span class="c1"># Here, L tells R to store the value as an integer,</span>
+<span class="n">i6</span> <span class="o">=</span> <span class="m">3+6i</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">i1</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">typeof</span><span class="p">(</span><span class="n">i1</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">i2</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">i3</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">i4</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">i1</span><span class="p">))</span> <span class="c1"># Here same i1 but we are using class function to check</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">i2</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">i5</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">i6</span><span class="p">))</span>
 <span class="c1"># these are to test for numerical data types</span>
@@ -280,13 +280,13 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] "double"
-[1] "complex"
+<pre>[1] "numeric"
+[1] "double"
+[1] "numeric"
+[1] "numeric"
+[1] "numeric"
 [1] "integer"
-[1] "numeric"
-[1] "numeric"
-[1] "numeric"
-[1] "numeric"
+[1] "complex"
 </pre>
 </div>
 </div>
@@ -8356,7 +8356,21 @@ we can use <code>ggplot2</code> package for data visualization<br>
       </div>
     </div>
 
-    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/sumendar" target="_blank" title="sumendar"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/sumendar" target="_blank" title="sumendar"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/sumendar" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/sumendar" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
 </div>
 
   </div>
