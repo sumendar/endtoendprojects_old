@@ -5,7 +5,6 @@
 - badges: true
 - comments: true
 - categories: [SQL]
-- image: imgs/YQfqXlY.png
 
 # **Notion Path:**  
 
@@ -27,7 +26,8 @@ https://drive.google.com/drive/folders/1ecWhPSM4AAVZTmr\_prUBqs07BocBuoeE?usp=sh
 
 
 ```sql
--- LECTURE: Creating a Database - Part I
+%%sql
+# LECTURE: Creating a Database - Part I
 
 CREATE DATABASE IF NOT EXISTS Sales;
 
@@ -48,6 +48,7 @@ Total execution time: 00:00:00.011
 
 
 ```sql
+%%sql
 USE Sales;
 ```
 
@@ -61,9 +62,10 @@ Total execution time: 00:00:00.002
 
 
 ```sql
+%%sql
 USE world;
 SELECT * from city;
-# select
+
 ```
 
 
