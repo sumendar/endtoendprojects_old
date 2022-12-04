@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e5e04675b4ef4820",
+        "id": "fc4f14c1143634d0",
         "type": "tabs",
         "children": [
           {
-            "id": "6005e187adad4d6d",
+            "id": "aacb41ef955c24f9",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -90,8 +90,10 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "6005e187adad4d6d",
+  "active": "aacb41ef955c24f9",
   "lastOpenFiles": [
+    "_notebooks/MarkdownBasicsWithSQL1.md",
+    "_posts/MarkdownBasicsWithSQL1.md",
     "_posts/2020-01-14-Paktpub_IntroductionToSQLiteDatabasesForPythonProgramming_VideoCourseTutorial.md",
     "_posts/2020-01-14-test-markdown-post.md",
     "_notebooks/1-SQLServerNotebook.md",
