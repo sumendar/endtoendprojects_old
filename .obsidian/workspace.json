@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "179fb38aadb1a84b",
+        "id": "e5e04675b4ef4820",
         "type": "tabs",
         "children": [
           {
-            "id": "578935db820c4992",
+            "id": "6005e187adad4d6d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2020-01-14-test-markdown-post.md",
+                "file": "_posts/2020-01-14-Paktpub_IntroductionToSQLiteDatabasesForPythonProgramming_VideoCourseTutorial.md",
                 "mode": "preview",
                 "source": false
               }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2020-01-14-test-markdown-post.md",
+                "file": "_posts/2020-01-14-Paktpub_IntroductionToSQLiteDatabasesForPythonProgramming_VideoCourseTutorial.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,10 +95,11 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "578935db820c4992",
+  "active": "6005e187adad4d6d",
   "lastOpenFiles": [
+    "_posts/2020-01-14-test-markdown-post.md",
+    "_posts/2020-01-14-Paktpub_IntroductionToSQLiteDatabasesForPythonProgramming_VideoCourseTutorial.md",
     "_notebooks/1-SQLServerNotebook.md",
-    "_word/README.md",
-    "_posts/2020-01-14-test-markdown-post.md"
+    "_word/README.md"
   ]
 }
