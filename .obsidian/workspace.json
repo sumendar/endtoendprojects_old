@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "418481cf0a47ec3a",
+        "id": "285e531e289ee8f2",
         "type": "tabs",
         "children": [
           {
-            "id": "77853dd3ba3a1db6",
+            "id": "85c5e2f2dc85be33",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -90,14 +90,25 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "bd972835f2b253d9",
+  "left-ribbon": {
+    "hiddenItems": {
+      "open-vscode:VSCode": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false
+    }
+  },
+  "active": "85c5e2f2dc85be33",
   "lastOpenFiles": [
-    "_posts/2020-01-14-MarkdownBasicsWithSQL1.md",
     "_posts/2020-01-14-test-markdown-post.md",
+    "_notebooks/1-SQLServerNotebook.md",
+    "Untitled.canvas",
+    "_posts/2020-01-14-MarkdownBasicsWithSQL1.md",
     "_posts/MarkdownBasicsWithSQL1.md",
     "_notebooks/MarkdownBasicsWithSQL1.md",
     "_posts/2020-01-14-Paktpub_IntroductionToSQLiteDatabasesForPythonProgramming_VideoCourseTutorial.md",
-    "_notebooks/1-SQLServerNotebook.md",
     "_word/README.md"
   ]
 }
